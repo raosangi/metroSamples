@@ -1,0 +1,128 @@
+#!/bin/bash -eu
+#
+# This script is a simple utility to augment/replace the global tools in self-service for the
+# purpose of installing the NetSkope root certificate into the JDK and Android Studio cacerts
+# files.  It also provides a means of undoing this integration to allow Android Studio to be updated
+# via the built-in patching mechanism.
+#
+# For more details: https://github.corp.ebay.com/CIO-CustomApps/Netskope-Support/issues/1
+# Slack support: [#netskope-dev-tools-support](https://ebay-eng.slack.com/archives/C022J3T4U7K)
+#
+. $(dirname ${BASH_SOURCE})/build-env.bash
+. "${ANDR_CORE}/CI/bin/args-support.bash"
+
+studioDir=""
+studioDirArgForm="--studioDir"
+studioDirArgUsage="Path to the Android Studio location to modify (default: '/Applications/Android Studio.app')"
+studioDirArgHandler() {
+    typeset consumedArgsVar="${1}" && shift
+    [ -n "${studioDir}" ] && usage "${1} may only be specified once"
+    [ ! -d "${2}" ] && usage "${2} is not a directory"
+    studioDir="$2"
+    eval "${consumedArgsVar}=2"
+}
+
+jdkDir=""
+jdkDirArgForm="--jdkDir"
+jdkDirArgUsage="Path to the JDK location to modify (defaults to JAVA_HOME)"
+jdkDirArgHandler() {
+    typeset consumedArgsVar="${1}" && shift
+    [ -n "${jdkDir}" ] && usage "${1} may only be specified once"
+    [ ! -d "${2}" ] && usage "${2} is not a directory"
+    jdkDir="$2"
+    eval "${consumedArgsVar}=2"
+}
+
+operation=""
+applyArgForm="--apply"
+applyArgUsage="Apply the NetSkope certificates."
+applyArgHandler() {
+    typeset consumedArgsVar="${1}" && shift
+    [ -n "${operation}" ] && usage "Operation (--apply/--remove) may only be specified once"
+    operation="apply"
+    eval "${consumedArgsVar}=1"
+}
+removeArgForm="--remove"
+removeArgUsage="Remove the NetSkope certificates."
+removeArgHandler() {
+    typeset consumedArgsVar="${1}" && shift
+    [ -n "${operation}" ] && usage "Operation (--apply/--remove) may only be specified once"
+    operation="remove"
+    eval "${consumedArgsVar}=1"
+}
+
+supportedArgumentList="apply remove studioDir jdkDir"
+processArguments "${@:-}"
+
+# Define defaults to be used when args are not provided on the command line:
+[ -z "${operation}" ] && processArgumentDirect --apply
+[ -z "${studioDir}" ] && processArgumentDirect --studioDir "/Applications/Android Studio.app"
+[ -z "${jdkDir}" -a -n "${JAVA_HOME}" ] && processArgumentDirect --jdkDir "${JAVA_HOME}"
+
+[ -z "${jdkDir}" ] && usage "JAVA_HOME is not set.  Use of --jdkDir is required."
+
+studioCacertsFile="${studioDir}/Contents/jre/Contents/Home/lib/security/cacerts"
+if [ ! -f "${studioCacertsFile}" ]; then
+studioCacertsFile="${studioDir}/Contents/jbr/Contents/Home/lib/security/cacerts"
+  if [ ! -f "${studioCacertsFile}" ]; then
+	echo "ERROR: Android Studio cacerts not found at expected location: ${studioCacertsFile}" 1>&2
+	exit 1
+  fi
+fi
+
+jdkCacertsFile="${jdkDir}/lib/security/cacerts"
+if [ ! -f "${jdkCacertsFile}" ]; then
+	echo "ERROR: JDK cacerts not found at expected location: ${jdkCacertsFile}" 1>&2
+	exit 1
+fi
+
+echo
+echo "This script will modify the cacerts files in the following locations: "
+echo "Android Studio: ${studioCacertsFile}"
+echo "JDK           : ${jdkCacertsFile}"
+echo
+echo -n "Proceed? [Y/n] "
+read response
+if [ "${response}" = "y" -o "${response}" = "Y" -o "${response}" = "" ]; then
+	echo
+	echo "Proceeding!"
+else
+	echo "Operation aborted!."
+	exit 0
+fi
+
+processCacerts() {
+	typeset cacerts="${1}"
+	cacertsBackup="${cacerts}.before-netskope-certs"
+	if [ "${operation}" = "apply" ]; then
+		if [ ! -f "${cacertsBackup}" ]; then
+			echo "Creating unaltered backup copy of cacerts file via sudo: ${cacertsBackup}"
+			sudo cp "${cacerts}" "${cacertsBackup}"
+		fi
+
+		echo "Adding NetSkope certificate to keystore via sudo..."
+		sudo "$JAVA_HOME/bin/keytool" -importcert \
+			-keystore "${cacerts}" \
+			-storepass changeit \
+			-noprompt \
+			-file "/Library/Application Support/Netskope/STAgent/download/nscacert.pem" \
+			-alias nscacert
+	else
+		if [ -f "${cacertsBackup}" ]; then
+			echo "Restoring backup cacerts file via sudo..."
+			# Avoid mv due to retain file ownership
+			sudo cp "${cacertsBackup}" "${cacerts}" && sudo rm -f "${cacertsBackup}"
+		else
+			echo "Backup cacerts file not found.  Attempting manual removal of NetSkope certificate from keystore via sudo..."
+			set +e
+			sudo keytool -delete \
+				-keystore "${cacerts}" \
+				-storepass changeit \
+				-noprompt \
+				-alias nscacert
+		fi
+	fi
+}
+
+processCacerts "${studioCacertsFile}"
+processCacerts "${jdkCacertsFile}"

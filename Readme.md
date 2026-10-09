@@ -1,0 +1,1 @@
+This repo has demonstration of Metro DI usage in Android app

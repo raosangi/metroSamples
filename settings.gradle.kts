@@ -1,25 +1,20 @@
 pluginManagement {
     repositories {
-//        google {
-//            content {
-//                includeGroupByRegex("com\\.android.*")
-//                includeGroupByRegex("com\\.google.*")
-//                includeGroupByRegex("androidx.*")
-//            }
-//        }
-//        mavenCentral()
-//        gradlePluginPortal()
-        maven(url = "https://artifactory.corp.ebay.com/artifactory/android/" )
+        google()
+        mavenCentral()
+        mavenLocal()
     }
 }
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-//        google()
-//        mavenCentral()
-        maven(url = "https://artifactory.corp.ebay.com/artifactory/android/" )
+        google()
+        mavenCentral()
+        mavenLocal()
     }
 }
 
-rootProject.name = "Meeta"
-include(":app")
+rootProject.name = "metroSamples"
+include(":daggerDemo")
+include(":metroDemo")
+include(":interopDaggerDemo")
