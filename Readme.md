@@ -1,6 +1,8 @@
+##Introduction 
 This repo has demonstrates the issue around generated code with Metro. for more
 see https://github.com/ZacSweers/metro/discussions/2923
 
+### DI Structure
 The main DI structure is
 AppComponent
 |
@@ -17,13 +19,14 @@ MainActivitySubcomponent:
 - MainActivity does inject TrackingHandler and DataSource that use multi-binding.
 - No additional IntoSet or IntoMap in this subcomponent 
 
-MainViewModelSubcomponent.
+MainViewModelSubcomponent:
 - Used to inject MainViewModel
 - MainViewModel does inject TrackingHandler and DataSource that use multi-binding.
 - includes IntoSet and IntoMap for classes that is used in DefaultTrackingHandler and DefaultDataSource
 
 
-All three project uses the same DI structure: 
+### Findings
+ 
 - :daggerDemo 
 
 Generated Code, that hoist to parent component in MainActivitySubcomponentImpl for TrackingHandler and DataSource
