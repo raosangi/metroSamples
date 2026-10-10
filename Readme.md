@@ -1,4 +1,4 @@
-##Introduction 
+## Introduction 
 This repo has demonstrates the issue around generated code with Metro. for more
 see https://github.com/ZacSweers/metro/discussions/2923
 
