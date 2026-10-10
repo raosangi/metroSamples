@@ -24,15 +24,15 @@ MainViewModelSubcomponent.
 
 
 All three project uses the same DI structure: 
-:daggerDemo -
+- :daggerDemo 
 Generated Code, that hoist to parent component in MainActivitySubcomponentImpl for TrackingHandler and DataSource
 https://github.com/raosangi/metroSamples/blob/main/daggerDemo/generated_output/daggerDemo-debug/sources/com/samples/dagger/demo/di/DaggerAppComponent.java
 
-:interopDaggerDemo -
+- :interopDaggerDemo
 Generated Code, that does not hoist to parent component in MainActivitySubcomponentImpl for TrackingHandler and DataSource
 https://github.com/raosangi/metroSamples/blob/main/interopDaggerDemo/generated_ouput/interopDaggerDemo-debug/sources/com/samples/interop/dagger/demo/di/AppComponent.java
 
-:metroDemo -
+- :metroDemo
 Generated Code, that does not hoist to parent component in MainActivitySubcomponentImpl for TrackingHandler and DataSource
 https://github.com/raosangi/metroSamples/blob/main/metroDemo/generated_output/metroDemo-debug/sources/com/samples/metro/demo/di/AppComponent.java
 
