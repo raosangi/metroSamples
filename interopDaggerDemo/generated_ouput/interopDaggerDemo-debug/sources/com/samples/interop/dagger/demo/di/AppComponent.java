@@ -38,13 +38,17 @@ import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: loaded from: classes3.dex */
 @Component(modules = {ErrorModule.class, TrackingModule.class, DataSourceModule.class})
 @Singleton
-@Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\bg\u0018\u0000 \u00062\u00020\u0001:\u0002\u0006\u0007R\u0012\u0010\u0002\u001a\u00020\u0003X¦\u0004¢\u0006\u0006\u001a\u0004\b\u0004\u0010\u0005Ê\u0001\u0002\b\tÊ\u0001\u001c\b\n\u0012\u0018\b\u000b\u0012\u0014\b\fJ\u0004\b\t0\fJ\u0004\b\t0\rJ\u0004\b\t0\u000e¨\u0006\bÀ\u0006\u0003"}, d2 = {"Lcom/samples/interop/dagger/demo/di/AppComponent;", "", "mainActivitySubComponentFactory", "Lcom/samples/interop/dagger/demo/di/MainActivitySubComponent$Factory;", "getMainActivitySubComponentFactory", "()Lcom/samples/interop/dagger/demo/di/MainActivitySubComponent$Factory;", "Companion", "Impl", "interopDaggerDemo", "Ljavax/inject/Singleton;", "Ldagger/Component;", "modules", "Lcom/samples/interop/dagger/demo/di/ErrorModule;", "Lcom/samples/interop/dagger/demo/di/TrackingModule;", "Lcom/samples/interop/dagger/demo/di/DataSourceModule;"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010$\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\bg\u0018\u0000 \u00112\u00020\u0001:\u0002\u0011\u0012R\u0018\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003X¦\u0004¢\u0006\u0006\u001a\u0004\b\u0005\u0010\u0006R\u001e\u0010\u0007\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n0\bX¦\u0004¢\u0006\u0006\u001a\u0004\b\u000b\u0010\fR\u0012\u0010\r\u001a\u00020\u000eX¦\u0004¢\u0006\u0006\u001a\u0004\b\u000f\u0010\u0010Ê\u0001\u0002\b\u0014Ê\u0001\u001c\b\u0015\u0012\u0018\b\u0016\u0012\u0014\b\fJ\u0004\b\t0\u0017J\u0004\b\t0\u0018J\u0004\b\t0\u0019¨\u0006\u0013À\u0006\u0003"}, d2 = {"Lcom/samples/interop/dagger/demo/di/AppComponent;", "", "trackingAdapter", "", "Lcom/samples/interop/dagger/demo/tracking/TrackingAdapter;", "getTrackingAdapter", "()Ljava/util/Set;", "screenContextProviderMap", "", "", "Lcom/samples/interop/dagger/demo/network/ScreenDetailHandler;", "getScreenContextProviderMap", "()Ljava/util/Map;", "mainActivitySubComponentFactory", "Lcom/samples/interop/dagger/demo/di/MainActivitySubComponent$Factory;", "getMainActivitySubComponentFactory", "()Lcom/samples/interop/dagger/demo/di/MainActivitySubComponent$Factory;", "Companion", "Impl", "interopDaggerDemo", "Ljavax/inject/Singleton;", "Ldagger/Component;", "modules", "Lcom/samples/interop/dagger/demo/di/ErrorModule;", "Lcom/samples/interop/dagger/demo/di/TrackingModule;", "Lcom/samples/interop/dagger/demo/di/DataSourceModule;"}, k = 1, mv = {2, 4, 0}, xi = 48)
 public interface AppComponent {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = Companion.$$INSTANCE;
 
     MainActivitySubComponent.Factory getMainActivitySubComponentFactory();
+
+    Map<String, ScreenDetailHandler> getScreenContextProviderMap();
+
+    Set<TrackingAdapter> getTrackingAdapter();
 
     /* JADX INFO: compiled from: AppComponent.kt */
     @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0011\u0010\u0004\u001a\u00020\u0005H\u0087\u0002b\u0002\b\u0006b\u0002\b\u0007¨\u0006\b"}, d2 = {"Lcom/samples/interop/dagger/demo/di/AppComponent$Companion;", "", "<init>", "()V", "invoke", "Lcom/samples/interop/dagger/demo/di/AppComponent;", "Ldev/zacsweers/metro/internal/GraphFactoryInvokeFunctionMarker;", "Lkotlin/jvm/JvmStatic;", "interopDaggerDemo"}, k = 1, mv = {2, 4, 0}, xi = 48)
@@ -62,7 +66,7 @@ public interface AppComponent {
     }
 
     /* JADX INFO: compiled from: AppComponent.kt */
-    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0007\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003Ê\u0001\u0018\b\u0005\u0012\b\b\u0006\u0012\u0004\b\b(\u0007\u0012\n\b\b\u0012\u0006\b\n0\t8\nÊ\u0001\u0002\b\u000bÊ\u0001\f\b\f\u0012\b\b\r\u0012\u0004\b\u0003\u0010\u0000\u008a\u00021\b\u000e\u0012-\b\u0001\u0012)\b\u0001\u001a%<get-mainActivitySubComponentFactory>¨\u0006\u0004"}, d2 = {"Lcom/samples/interop/dagger/demo/di/AppComponent$Impl;", "Lcom/samples/interop/dagger/demo/di/AppComponent;", "<init>", "()V", "interopDaggerDemo", "Lkotlin/Deprecated;", "message", "This synthesized declaration should not be used directly", "level", "Lkotlin/DeprecationLevel;", "HIDDEN", "Ldev/zacsweers/metro/internal/MetroImplMarker;", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters", "dev.zacsweers.metro.compiler"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0007\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003Ê\u0001\u0018\b\u0005\u0012\b\b\u0006\u0012\u0004\b\b(\u0007\u0012\n\b\b\u0012\u0006\b\n0\t8\nÊ\u0001\u0002\b\u000bÊ\u0001\f\b\f\u0012\b\b\r\u0012\u0004\b\u0003\u0010\u0000\u008a\u0002k\b\u000e\u0012g\b\u0001\u0012c\b\u0001\u001a%<get-mainActivitySubComponentFactory>\u001a\u001e<get-screenContextProviderMap>\u001a\u0015<get-trackingAdapter>\"\u0001\u0006¨\u0006\u0004"}, d2 = {"Lcom/samples/interop/dagger/demo/di/AppComponent$Impl;", "Lcom/samples/interop/dagger/demo/di/AppComponent;", "<init>", "()V", "interopDaggerDemo", "Lkotlin/Deprecated;", "message", "This synthesized declaration should not be used directly", "level", "Lkotlin/DeprecationLevel;", "HIDDEN", "Ldev/zacsweers/metro/internal/MetroImplMarker;", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters", "dev.zacsweers.metro.compiler"}, k = 1, mv = {2, 4, 0}, xi = 48)
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "This synthesized declaration should not be used directly")
     @MetroImplMarker
     public static final class Impl implements AppComponent {
@@ -73,6 +77,13 @@ public interface AppComponent {
             this();
         }
 
+        private final Set<TrackingAdapter> getSetOfTrackingAdapter() {
+            Set setCreateSetBuilder = SetsKt.createSetBuilder(2);
+            setCreateSetBuilder.add(new TrackingAdapter3());
+            setCreateSetBuilder.add(new TrackingAdapter2());
+            return SetsKt.build(setCreateSetBuilder);
+        }
+
         private Impl() {
             this.thisGraphInstance = this;
         }
@@ -80,6 +91,16 @@ public interface AppComponent {
         @Override // com.samples.interop.dagger.demo.di.AppComponent
         public final MainActivitySubComponent.Factory getMainActivitySubComponentFactory() {
             return new MainActivitySubComponentImpl.FactoryImpl(this.thisGraphInstance);
+        }
+
+        @Override // com.samples.interop.dagger.demo.di.AppComponent
+        public final Map<String, ScreenDetailHandler> getScreenContextProviderMap() {
+            return getMapOfStringToScreenDetailHandler();
+        }
+
+        @Override // com.samples.interop.dagger.demo.di.AppComponent
+        public final Set<TrackingAdapter> getTrackingAdapter() {
+            return getSetOfTrackingAdapter();
         }
 
         /* JADX INFO: compiled from: AppComponent.kt */
@@ -117,8 +138,8 @@ public interface AppComponent {
 
             private final Set<TrackingAdapter> getSetOfTrackingAdapter() {
                 Set setCreateSetBuilder = SetsKt.createSetBuilder(2);
-                setCreateSetBuilder.add(new TrackingAdapter2());
                 setCreateSetBuilder.add(new TrackingAdapter3());
+                setCreateSetBuilder.add(new TrackingAdapter2());
                 return SetsKt.build(setCreateSetBuilder);
             }
 
@@ -169,8 +190,8 @@ public interface AppComponent {
 
                 private final Set<TrackingAdapter> getSetOfTrackingAdapter() {
                     Set setCreateSetBuilder = SetsKt.createSetBuilder(3);
-                    setCreateSetBuilder.add(new TrackingAdapter2());
                     setCreateSetBuilder.add(new TrackingAdapter3());
+                    setCreateSetBuilder.add(new TrackingAdapter2());
                     setCreateSetBuilder.add(new MainActivityTrackingAdapter());
                     return SetsKt.build(setCreateSetBuilder);
                 }
@@ -193,6 +214,12 @@ public interface AppComponent {
                 mapCreateMapBuilder.put("App", JavaxInteropKt.asJavaxProvider(AppScreenDetailHandler.MetroFactory.create()));
                 return MapsKt.build(mapCreateMapBuilder);
             }
+        }
+
+        private final Map<String, ScreenDetailHandler> getMapOfStringToScreenDetailHandler() {
+            Map mapCreateMapBuilder = MapsKt.createMapBuilder(1);
+            mapCreateMapBuilder.put("App", new AppScreenDetailHandler());
+            return MapsKt.build(mapCreateMapBuilder);
         }
     }
 

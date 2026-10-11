@@ -1,6 +1,8 @@
 package com.samples.interop.dagger.demo.di
 
 
+import com.samples.interop.dagger.demo.network.ScreenDetailHandler
+import com.samples.interop.dagger.demo.tracking.TrackingAdapter
 import dagger.Component
 import dev.zacsweers.metro.createGraph
 import javax.inject.Singleton
@@ -12,6 +14,11 @@ import javax.inject.Singleton
     DataSourceModule::class
 ])
 interface AppComponent {
+
+    val trackingAdapter: Set<TrackingAdapter>
+
+    val screenContextProviderMap: Map<String, ScreenDetailHandler>
+
     val mainActivitySubComponentFactory: MainActivitySubComponent.Factory
 }
 
