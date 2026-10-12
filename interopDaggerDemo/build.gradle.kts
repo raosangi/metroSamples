@@ -11,6 +11,7 @@ metro {
     interop {
         includeDagger()
     }
+    enableKClassToClassMapKeyInterop.set(true)
 }
 
 android {

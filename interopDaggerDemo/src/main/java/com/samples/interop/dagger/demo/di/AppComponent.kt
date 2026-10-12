@@ -6,6 +6,7 @@ import com.samples.interop.dagger.demo.tracking.TrackingAdapter
 import dagger.Component
 import dev.zacsweers.metro.createGraph
 import javax.inject.Singleton
+import kotlin.reflect.KClass
 
 @Singleton
 @Component(modules = [
