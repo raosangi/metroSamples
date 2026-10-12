@@ -7,6 +7,9 @@ import com.samples.dagger.demo.tracking.TrackingAdapter3
 import com.samples.dagger.demo.tracking.TrackingHandler
 import dagger.Binds
 import dagger.Module
+import dagger.Provides
+import dagger.multibindings.ClassKey
+import dagger.multibindings.IntoMap
 import dagger.multibindings.IntoSet
 
 
@@ -24,4 +27,10 @@ interface TrackingModule {
     @Binds
     fun bindsTrackingAdapter3(instance: TrackingAdapter3) : TrackingAdapter
 
+    companion object {
+        @Provides
+        @IntoMap
+        @ClassKey(String::class)
+        fun providesStringTag(): Any = "TrackingTag"
+    }
 }

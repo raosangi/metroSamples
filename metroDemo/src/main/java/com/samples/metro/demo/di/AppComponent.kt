@@ -8,6 +8,7 @@ import com.samples.metro.demo.tracking.TrackingHandler
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.DependencyGraph
 import dev.zacsweers.metro.createGraph
+import kotlin.reflect.KClass
 
 
 @DependencyGraph(scope = AppScope::class, bindingContainers = [
@@ -17,10 +18,11 @@ import dev.zacsweers.metro.createGraph
 ])
 interface AppComponent {
 
-    val trackingAdapter: Set<TrackingAdapter>
+    val trackingAdapter: @JvmSuppressWildcards Set<TrackingAdapter>
 
-    val screenContextProviderMap: Map<String,ScreenDetailHandler>
+    val screenContextProviderMap: Map<String, @JvmSuppressWildcards ScreenDetailHandler>
 
+    val trackingTags: Map<KClass<*>, @JvmSuppressWildcards Any>
 
     val mainActivitySubComponentFactory: MainActivitySubComponent.Factory
 

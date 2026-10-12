@@ -20,6 +20,8 @@ interface AppComponent {
 
     val screenContextProviderMap: Map<String, ScreenDetailHandler>
 
+    val trackingTags: Map<Class<*>, @JvmSuppressWildcards  Any>
+
     val mainActivitySubComponentFactory: MainActivitySubComponent.Factory
 }
 

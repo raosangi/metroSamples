@@ -26,6 +26,7 @@ interface TrackingModule {
     @IntoSet
     @Binds
     fun bindsTrackingAdapter3(instance: TrackingAdapter3) : TrackingAdapter
+
     companion object {
         @Provides
         @IntoMap

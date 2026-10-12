@@ -99,7 +99,7 @@ public final class DaggerAppComponent {
         }
 
         DefaultTrackingHandler defaultTrackingHandler() {
-            return new DefaultTrackingHandler(setOfTrackingAdapter());
+            return new DefaultTrackingHandler(setOfTrackingAdapter(), this.appComponentImpl.mapOfClassOfObjectAndObject());
         }
 
         Map mapOfStringAndProviderOfScreenDetailHandlerBuilder() {
@@ -167,8 +167,12 @@ public final class DaggerAppComponent {
             return setOfTrackingAdapterBuilder();
         }
 
+        Map<Class<?>, Object> mapOfClassOfObjectAndObject() {
+            return Collections.singletonMap(String.class, TrackingModule_Companion_ProvidesStringTagFactory.providesStringTag());
+        }
+
         DefaultTrackingHandler defaultTrackingHandler() {
-            return new DefaultTrackingHandler(setOfTrackingAdapter());
+            return new DefaultTrackingHandler(setOfTrackingAdapter(), mapOfClassOfObjectAndObject());
         }
 
         Map<String, Provider<ScreenDetailHandler>> mapOfStringAndProviderOfScreenDetailHandler() {

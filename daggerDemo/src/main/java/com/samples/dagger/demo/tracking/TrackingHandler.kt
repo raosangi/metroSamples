@@ -11,11 +11,13 @@ interface TrackingHandler {
 
 
 class DefaultTrackingHandler @Inject constructor(
-    val trackingAdapter: Set<@JvmSuppressWildcards TrackingAdapter>
+    val trackingAdapter: Set<@JvmSuppressWildcards TrackingAdapter>,
+    val trackingTags: Map<Class<*>, @JvmSuppressWildcards  Any>,
 ) : TrackingHandler {
     override fun handleTracking(trackId: String) {
         val tracking = trackingAdapter.fold(trackId) { acc, current -> acc + current.adapt(trackId) }
         Log.d("TrackingHandler", tracking)
+        Log.d("TrackingHandler", "Tags ${trackingTags[String::class.java].toString()}")
     }
 }
 

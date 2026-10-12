@@ -17,12 +17,12 @@ interface TrackingHandler {
 
 class DefaultTrackingHandler @Inject constructor(
     val trackingAdapter: Set<@JvmSuppressWildcards TrackingAdapter>,
-    val trackingTags: @JvmSuppressWildcards Provider<Map<Class<*>, Any>>, // this throws an exception in Metro 1.5.0-snapshot version
+    val trackingTags: Map<Class<*>, @JvmSuppressWildcards  Any>, // Using provider here, throws an exception in Metro 1.5.0-snapshot version
 ) : TrackingHandler {
     override fun handleTracking(trackId: String) {
         val tracking = trackingAdapter.fold(trackId) { acc, current -> acc + current.adapt(trackId) }
         Log.d("TrackingHandler", tracking)
 
-        Log.d("TrackingHandler", "Tags ${trackingTags.get()[String::class.java].toString()}")
+        Log.d("TrackingHandler", "Tags ${trackingTags[String::class.java].toString()}")
     }
 }

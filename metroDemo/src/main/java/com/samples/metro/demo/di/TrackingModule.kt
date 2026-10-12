@@ -7,7 +7,10 @@ import com.samples.metro.demo.tracking.TrackingAdapter3
 import com.samples.metro.demo.tracking.TrackingHandler
 import dev.zacsweers.metro.BindingContainer
 import dev.zacsweers.metro.Binds
+import dev.zacsweers.metro.ClassKey
+import dev.zacsweers.metro.IntoMap
 import dev.zacsweers.metro.IntoSet
+import dev.zacsweers.metro.Provides
 
 
 @BindingContainer
@@ -24,4 +27,10 @@ interface TrackingModule {
     @Binds
     fun bindsTrackingAdapter3(instance: TrackingAdapter3) : TrackingAdapter
 
+    companion object {
+        @Provides
+        @IntoMap
+        @ClassKey(String::class)
+        fun providesStringTag(): Any = "TrackingTag"
+    }
 }
