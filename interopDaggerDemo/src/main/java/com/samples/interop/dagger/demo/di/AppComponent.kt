@@ -2,9 +2,13 @@ package com.samples.interop.dagger.demo.di
 
 
 import com.samples.interop.dagger.demo.network.ScreenDetailHandler
+import com.samples.interop.dagger.demo.tracking.NewTrackingQualifier
+import com.samples.interop.dagger.demo.tracking.OldTrackingQualifier
 import com.samples.interop.dagger.demo.tracking.TrackingAdapter
+import com.samples.interop.dagger.demo.tracking.TrackingIdentifier
 import dagger.Component
 import dev.zacsweers.metro.createGraph
+import javax.inject.Provider
 import javax.inject.Singleton
 import kotlin.reflect.KClass
 
@@ -16,11 +20,15 @@ import kotlin.reflect.KClass
 ])
 interface AppComponent {
 
-    val trackingAdapter: Set<TrackingAdapter>
+    @OldTrackingQualifier
+    val trackingAdapterOld: Provider<Set<TrackingAdapter>>
 
-    val screenContextProviderMap: Map<String, ScreenDetailHandler>
+    @NewTrackingQualifier
+    val trackingAdapterNew: Provider<Set<TrackingAdapter>>
 
-    val trackingTags: Map<Class<*>, @JvmSuppressWildcards  Any>
+    val screenContextProviderMap: Map<String,Provider<ScreenDetailHandler>>
+
+    val trackingTags: Map<Class<*>, () -> TrackingIdentifier>
 
     val mainActivitySubComponentFactory: MainActivitySubComponent.Factory
 }

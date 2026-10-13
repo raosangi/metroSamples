@@ -13,7 +13,7 @@ import kotlin.jvm.internal.Intrinsics;
 
 /* JADX INFO: compiled from: DataSource.kt */
 /* JADX INFO: loaded from: classes4.dex */
-@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010$\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0007\u0018\u00002\u00020\u0001:\u0001\u000fB,\b\u0007\u0012\u001d\u0010\u0002\u001a\u0019\u0012\u0004\u0012\u00020\u0004\u0012\u000f\u0012\r\u0012\u0004\u0012\u00020\u00060\u0005¢\u0006\u0002\b\u00070\u0003\u001a\u0002\b\n¢\u0006\u0004\b\b\u0010\tJ\u0010\u0010\r\u001a\u00020\u00042\u0006\u0010\u000e\u001a\u00020\u0004H\u0016R(\u0010\u0002\u001a\u0019\u0012\u0004\u0012\u00020\u0004\u0012\u000f\u0012\r\u0012\u0004\u0012\u00020\u00060\u0005¢\u0006\u0002\b\u00070\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fÊ\u0001\f\b\u0011\u0012\b\b\u0012\u0012\u0004\b\u0003\u0010\u0000\u008a\u0002\u0016\b\u0013\u0012\u0012\b\u0001\u001a\u000e\n\fMetroFactory¨\u0006\u0010"}, d2 = {"Lcom/samples/interop/dagger/demo/network/DefaultDataSource;", "Lcom/samples/interop/dagger/demo/network/DataSource;", "screenContextProviderMap", "", "", "Ljavax/inject/Provider;", "Lcom/samples/interop/dagger/demo/network/ScreenDetailHandler;", "Lkotlin/jvm/JvmSuppressWildcards;", "<init>", "(Ljava/util/Map;)V", "Ljavax/inject/Inject;", "getScreenContextProviderMap", "()Ljava/util/Map;", "getData", "key", "MetroFactory", "interopDaggerDemo", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters", "dev.zacsweers.metro.compiler"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010$\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0007\u0018\u00002\u00020\u0001:\u0001\u000eB'\b\u0007\u0012\u0018\u0010\u0002\u001a\u0014\u0012\u0004\u0012\u00020\u0004\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00060\u00050\u0003\u001a\u0002\b\t¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\f\u001a\u00020\u00042\u0006\u0010\r\u001a\u00020\u0004H\u0016R#\u0010\u0002\u001a\u0014\u0012\u0004\u0012\u00020\u0004\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00060\u00050\u0003¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bÊ\u0001\f\b\u0010\u0012\b\b\u0011\u0012\u0004\b\u0003\u0010\u0000\u008a\u0002\u0016\b\u0012\u0012\u0012\b\u0001\u001a\u000e\n\fMetroFactory¨\u0006\u000f"}, d2 = {"Lcom/samples/interop/dagger/demo/network/DefaultDataSource;", "Lcom/samples/interop/dagger/demo/network/DataSource;", "screenContextProviderMap", "", "", "Ljavax/inject/Provider;", "Lcom/samples/interop/dagger/demo/network/ScreenDetailHandler;", "<init>", "(Ljava/util/Map;)V", "Ljavax/inject/Inject;", "getScreenContextProviderMap", "()Ljava/util/Map;", "getData", "key", "MetroFactory", "interopDaggerDemo", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters", "dev.zacsweers.metro.compiler"}, k = 1, mv = {2, 4, 0}, xi = 48)
 public final class DefaultDataSource implements DataSource {
     public static final int $stable = 8;
     private final Map<String, Provider<ScreenDetailHandler>> screenContextProviderMap;
@@ -40,11 +40,11 @@ public final class DefaultDataSource implements DataSource {
         }
 
         @JvmStatic
-        public static final DefaultDataSource newInstance(Map<String, Provider<ScreenDetailHandler>> map) {
+        public static final DefaultDataSource newInstance(Map<String, ? extends Provider<ScreenDetailHandler>> map) {
             return Companion.newInstance(map);
         }
 
-        public final DefaultDataSource declarationMirror(Map<String, Provider<ScreenDetailHandler>> screenContextProviderMap) {
+        public final DefaultDataSource declarationMirror(Map<String, ? extends Provider<ScreenDetailHandler>> screenContextProviderMap) {
             Intrinsics.checkNotNullParameter(screenContextProviderMap, "screenContextProviderMap");
             throw new IllegalStateException("Never called".toString());
         }
@@ -68,7 +68,7 @@ public final class DefaultDataSource implements DataSource {
             }
 
             @JvmStatic
-            public final DefaultDataSource newInstance(Map<String, Provider<ScreenDetailHandler>> screenContextProviderMap) {
+            public final DefaultDataSource newInstance(Map<String, ? extends Provider<ScreenDetailHandler>> screenContextProviderMap) {
                 Intrinsics.checkNotNullParameter(screenContextProviderMap, "screenContextProviderMap");
                 return new DefaultDataSource(screenContextProviderMap);
             }
@@ -78,8 +78,9 @@ public final class DefaultDataSource implements DataSource {
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     @Inject
-    public DefaultDataSource(Map<String, Provider<ScreenDetailHandler>> screenContextProviderMap) {
+    public DefaultDataSource(Map<String, ? extends Provider<ScreenDetailHandler>> screenContextProviderMap) {
         Intrinsics.checkNotNullParameter(screenContextProviderMap, "screenContextProviderMap");
         this.screenContextProviderMap = screenContextProviderMap;
     }

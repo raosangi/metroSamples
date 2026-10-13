@@ -8,7 +8,7 @@ interface DataSource {
 }
 
 class DefaultDataSource @Inject constructor(
-    val screenContextProviderMap: Map<String,@JvmSuppressWildcards () -> ScreenDetailHandler>
+    val screenContextProviderMap: Map<String, () -> ScreenDetailHandler>
 ) : DataSource {
     override fun getData(key: String): String {
         val context = screenContextProviderMap[key]?.invoke()?.getScreenContext() ?: "UNKNOWN"

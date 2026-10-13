@@ -12,6 +12,7 @@ metro {
         includeDagger()
     }
     enableKClassToClassMapKeyInterop.set(true)
+    enableSwitchingProviders.set(true)
 }
 
 android {
@@ -51,6 +52,7 @@ kotlin {
         allWarningsAsErrors.set(true)
         freeCompilerArgs.add("-Xrender-internal-diagnostic-names")
         freeCompilerArgs.add("-Xwarning-level=SUSPICIOUS_UNUSED_MULTIBINDING:warning")
+        freeCompilerArgs.add("-Xwarning-level=METRO_WARNING:disabled")
     }
 }
 

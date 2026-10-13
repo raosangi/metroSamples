@@ -2,6 +2,7 @@ package com.samples.metro.demo.tracking
 
 import android.util.Log
 import dev.zacsweers.metro.Inject
+import kotlin.collections.fold
 import kotlin.reflect.KClass
 
 
@@ -11,14 +12,18 @@ interface TrackingHandler {
 
 
 
-class DefaultTrackingHandler @Inject constructor(
-    val trackingAdapter: Set<@JvmSuppressWildcards TrackingAdapter>,
-    val trackingTags: Map<KClass<*>, @JvmSuppressWildcards  Any>
+class DefaultTrackingHandler(
+    val oldTrackingAdapter: () -> Set<TrackingAdapter>,
+    val newTrackingAdapter: () -> Set<TrackingAdapter>,
+    val trackingTags: Map<KClass<*>, () -> TrackingIdentifier>,
 ) : TrackingHandler {
     override fun handleTracking(trackId: String) {
-        val tracking = trackingAdapter.fold(trackId) { acc, current -> acc + current.adapt(trackId) }
-        Log.d("TrackingHandler", tracking)
-        Log.d("TrackingHandler", "Tags ${trackingTags[String::class].toString()}")
+        val trackingOld = oldTrackingAdapter().fold(trackId) { acc, current -> acc + current.adapt(trackId) }
+        Log.d("TrackingHandler", "Tracking Old: $trackingOld")
+
+        val trackingNew = newTrackingAdapter().fold(trackId) { acc, current -> acc + current.adapt(trackId) }
+        Log.d("TrackingHandler", "Tracking Old: $trackingOld")
+
+        Log.d("TrackingHandler", "Tags ${trackingTags.size}")
     }
 }
-
