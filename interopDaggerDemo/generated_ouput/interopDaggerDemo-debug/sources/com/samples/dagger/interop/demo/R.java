@@ -1,4 +1,4 @@
-package com.samples.dagger.demo;
+package com.samples.dagger.interop.demo;
 
 /* JADX INFO: loaded from: classes2.dex */
 public final class R {
@@ -375,160 +375,148 @@ public final class R {
         public static final int consume_window_insets_tag = 0x7f05002c;
 
         /* JADX INFO: Added by JADX */
-        public static final int dataBinding = 0x7f05002d;
+        public static final int dialog_button = 0x7f05002d;
 
         /* JADX INFO: Added by JADX */
-        public static final int dialog_button = 0x7f05002e;
+        public static final int edit_text_id = 0x7f05002e;
 
         /* JADX INFO: Added by JADX */
-        public static final int edit_text_id = 0x7f05002f;
+        public static final int forever = 0x7f05002f;
 
         /* JADX INFO: Added by JADX */
-        public static final int forever = 0x7f050030;
+        public static final int hide_graphics_layer_in_inspector_tag = 0x7f050030;
 
         /* JADX INFO: Added by JADX */
-        public static final int hide_graphics_layer_in_inspector_tag = 0x7f050031;
+        public static final int hide_ime_id = 0x7f050031;
 
         /* JADX INFO: Added by JADX */
-        public static final int hide_ime_id = 0x7f050032;
+        public static final int hide_in_inspector_tag = 0x7f050032;
 
         /* JADX INFO: Added by JADX */
-        public static final int hide_in_inspector_tag = 0x7f050033;
+        public static final int icon = 0x7f050033;
 
         /* JADX INFO: Added by JADX */
-        public static final int icon = 0x7f050034;
+        public static final int icon_group = 0x7f050034;
 
         /* JADX INFO: Added by JADX */
-        public static final int icon_group = 0x7f050035;
+        public static final int info = 0x7f050035;
 
         /* JADX INFO: Added by JADX */
-        public static final int info = 0x7f050036;
+        public static final int inspection_slot_table_set = 0x7f050036;
 
         /* JADX INFO: Added by JADX */
-        public static final int inspection_slot_table_set = 0x7f050037;
+        public static final int is_pooling_container_tag = 0x7f050037;
 
         /* JADX INFO: Added by JADX */
-        public static final int is_pooling_container_tag = 0x7f050038;
+        public static final int italic = 0x7f050038;
 
         /* JADX INFO: Added by JADX */
-        public static final int italic = 0x7f050039;
+        public static final int line1 = 0x7f050039;
 
         /* JADX INFO: Added by JADX */
-        public static final int line1 = 0x7f05003a;
+        public static final int line3 = 0x7f05003a;
 
         /* JADX INFO: Added by JADX */
-        public static final int line3 = 0x7f05003b;
+        public static final int normal = 0x7f05003b;
 
         /* JADX INFO: Added by JADX */
-        public static final int normal = 0x7f05003c;
+        public static final int notification_background = 0x7f05003c;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_background = 0x7f05003d;
+        public static final int notification_main_column = 0x7f05003d;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_main_column = 0x7f05003e;
+        public static final int notification_main_column_container = 0x7f05003e;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_main_column_container = 0x7f05003f;
+        public static final int pooling_container_listener_holder_tag = 0x7f05003f;
 
         /* JADX INFO: Added by JADX */
-        public static final int onAttachStateChangeListener = 0x7f050040;
+        public static final int report_drawn = 0x7f050040;
 
         /* JADX INFO: Added by JADX */
-        public static final int onDateChanged = 0x7f050041;
+        public static final int right_icon = 0x7f050041;
 
         /* JADX INFO: Added by JADX */
-        public static final int pooling_container_listener_holder_tag = 0x7f050042;
+        public static final int right_side = 0x7f050042;
 
         /* JADX INFO: Added by JADX */
-        public static final int report_drawn = 0x7f050043;
+        public static final int tag_accessibility_actions = 0x7f050043;
 
         /* JADX INFO: Added by JADX */
-        public static final int right_icon = 0x7f050044;
+        public static final int tag_accessibility_clickable_spans = 0x7f050044;
 
         /* JADX INFO: Added by JADX */
-        public static final int right_side = 0x7f050045;
+        public static final int tag_accessibility_heading = 0x7f050045;
 
         /* JADX INFO: Added by JADX */
-        public static final int tag_accessibility_actions = 0x7f050046;
+        public static final int tag_accessibility_pane_title = 0x7f050046;
 
         /* JADX INFO: Added by JADX */
-        public static final int tag_accessibility_clickable_spans = 0x7f050047;
+        public static final int tag_compat_insets_dispatch = 0x7f050047;
 
         /* JADX INFO: Added by JADX */
-        public static final int tag_accessibility_heading = 0x7f050048;
+        public static final int tag_on_apply_window_listener = 0x7f050048;
 
         /* JADX INFO: Added by JADX */
-        public static final int tag_accessibility_pane_title = 0x7f050049;
+        public static final int tag_on_receive_content_listener = 0x7f050049;
 
         /* JADX INFO: Added by JADX */
-        public static final int tag_compat_insets_dispatch = 0x7f05004a;
+        public static final int tag_on_receive_content_mime_types = 0x7f05004a;
 
         /* JADX INFO: Added by JADX */
-        public static final int tag_on_apply_window_listener = 0x7f05004b;
+        public static final int tag_screen_reader_focusable = 0x7f05004b;
 
         /* JADX INFO: Added by JADX */
-        public static final int tag_on_receive_content_listener = 0x7f05004c;
+        public static final int tag_state_description = 0x7f05004c;
 
         /* JADX INFO: Added by JADX */
-        public static final int tag_on_receive_content_mime_types = 0x7f05004d;
+        public static final int tag_system_bar_state_monitor = 0x7f05004d;
 
         /* JADX INFO: Added by JADX */
-        public static final int tag_screen_reader_focusable = 0x7f05004e;
+        public static final int tag_transition_group = 0x7f05004e;
 
         /* JADX INFO: Added by JADX */
-        public static final int tag_state_description = 0x7f05004f;
+        public static final int tag_unhandled_key_event_manager = 0x7f05004f;
 
         /* JADX INFO: Added by JADX */
-        public static final int tag_system_bar_state_monitor = 0x7f050050;
+        public static final int tag_unhandled_key_listeners = 0x7f050050;
 
         /* JADX INFO: Added by JADX */
-        public static final int tag_transition_group = 0x7f050051;
+        public static final int tag_window_insets_animation_callback = 0x7f050051;
 
         /* JADX INFO: Added by JADX */
-        public static final int tag_unhandled_key_event_manager = 0x7f050052;
+        public static final int text = 0x7f050052;
 
         /* JADX INFO: Added by JADX */
-        public static final int tag_unhandled_key_listeners = 0x7f050053;
+        public static final int text2 = 0x7f050053;
 
         /* JADX INFO: Added by JADX */
-        public static final int tag_window_insets_animation_callback = 0x7f050054;
+        public static final int time = 0x7f050054;
 
         /* JADX INFO: Added by JADX */
-        public static final int text = 0x7f050055;
+        public static final int title = 0x7f050055;
 
         /* JADX INFO: Added by JADX */
-        public static final int text2 = 0x7f050056;
+        public static final int view_tree_disjoint_parent = 0x7f050056;
 
         /* JADX INFO: Added by JADX */
-        public static final int textWatcher = 0x7f050057;
+        public static final int view_tree_lifecycle_owner = 0x7f050057;
 
         /* JADX INFO: Added by JADX */
-        public static final int time = 0x7f050058;
+        public static final int view_tree_navigation_event_dispatcher_owner = 0x7f050058;
 
         /* JADX INFO: Added by JADX */
-        public static final int title = 0x7f050059;
+        public static final int view_tree_on_back_pressed_dispatcher_owner = 0x7f050059;
 
         /* JADX INFO: Added by JADX */
-        public static final int view_tree_disjoint_parent = 0x7f05005a;
+        public static final int view_tree_saved_state_registry_owner = 0x7f05005a;
 
         /* JADX INFO: Added by JADX */
-        public static final int view_tree_lifecycle_owner = 0x7f05005b;
+        public static final int view_tree_view_model_store_owner = 0x7f05005b;
 
         /* JADX INFO: Added by JADX */
-        public static final int view_tree_navigation_event_dispatcher_owner = 0x7f05005c;
-
-        /* JADX INFO: Added by JADX */
-        public static final int view_tree_on_back_pressed_dispatcher_owner = 0x7f05005d;
-
-        /* JADX INFO: Added by JADX */
-        public static final int view_tree_saved_state_registry_owner = 0x7f05005e;
-
-        /* JADX INFO: Added by JADX */
-        public static final int view_tree_view_model_store_owner = 0x7f05005f;
-
-        /* JADX INFO: Added by JADX */
-        public static final int wrapped_composition_tag = 0x7f050060;
+        public static final int wrapped_composition_tag = 0x7f05005c;
     }
 
     /* JADX INFO: Added by JADX */
@@ -888,14 +876,6 @@ public final class R {
         public static final int Widget_Compat_NotificationActionText = 0x7f0a000b;
 
         private style() {
-        }
-    }
-
-    public static final class xml {
-        public static int backup_rules = 0x7f0c0000;
-        public static int data_extraction_rules = 0x7f0c0001;
-
-        private xml() {
         }
     }
 

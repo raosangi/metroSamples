@@ -12,6 +12,8 @@ import com.samples.metro.demo.tracking.TrackingAdapter5
 import com.samples.metro.demo.tracking.TrackingAdapter6
 import com.samples.metro.demo.tracking.TrackingAdapter7
 import com.samples.metro.demo.tracking.TrackingAdapter8
+import com.samples.metro.demo.tracking.TrackingAdapter9
+import com.samples.metro.demo.tracking.TrackingExporter
 import com.samples.metro.demo.tracking.TrackingHandler
 import com.samples.metro.demo.tracking.TrackingIdentifier
 import dev.zacsweers.metro.BindingContainer
@@ -19,6 +21,7 @@ import dev.zacsweers.metro.Binds
 import dev.zacsweers.metro.ClassKey
 import dev.zacsweers.metro.IntoMap
 import dev.zacsweers.metro.IntoSet
+import dev.zacsweers.metro.OptionalBinding
 import dev.zacsweers.metro.Provides
 import kotlin.reflect.KClass
 
@@ -48,6 +51,10 @@ interface TrackingModule {
 
     @[IntoSet Binds NewTrackingQualifier]
     fun bindsTrackingAdapter8(instance: TrackingAdapter8) : TrackingAdapter
+
+    @[IntoSet Binds NewTrackingQualifier]
+    fun bindsTrackingAdapter9(instance: TrackingAdapter9) : TrackingAdapter
+
 
     @Binds
     @IntoMap

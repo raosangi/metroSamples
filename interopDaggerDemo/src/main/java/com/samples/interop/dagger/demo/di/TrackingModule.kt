@@ -12,9 +12,12 @@ import com.samples.interop.dagger.demo.tracking.TrackingAdapter5
 import com.samples.interop.dagger.demo.tracking.TrackingAdapter6
 import com.samples.interop.dagger.demo.tracking.TrackingAdapter7
 import com.samples.interop.dagger.demo.tracking.TrackingAdapter8
+import com.samples.interop.dagger.demo.tracking.TrackingAdapter9
+import com.samples.interop.dagger.demo.tracking.TrackingExporter
 import com.samples.interop.dagger.demo.tracking.TrackingHandler
 import com.samples.interop.dagger.demo.tracking.TrackingIdentifier
 import dagger.Binds
+import dagger.BindsOptionalOf
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.ClassKey
@@ -49,6 +52,12 @@ interface TrackingModule {
 
     @[IntoSet Binds NewTrackingQualifier]
     fun bindsTrackingAdapter8(instance: TrackingAdapter8) : TrackingAdapter
+
+    @[IntoSet Binds NewTrackingQualifier]
+    fun bindsTrackingAdapter9(instance: TrackingAdapter9) : TrackingAdapter
+
+    @BindsOptionalOf
+    fun bindsOptionalOf(): TrackingExporter
 
     @Binds
     @IntoMap

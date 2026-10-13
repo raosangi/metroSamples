@@ -1,7 +1,9 @@
 package com.samples.interop.dagger.demo.tracking
 
+import java.util.Optional
 import javax.inject.Inject
 import javax.inject.Qualifier
+import kotlin.jvm.optionals.getOrNull
 
 @Qualifier
 annotation class OldTrackingQualifier
@@ -22,23 +24,29 @@ class TrackingAdapter3 @Inject constructor(): TrackingAdapter {
 }
 
 class TrackingAdapter4 @Inject constructor(): TrackingAdapter {
-    override fun adapt(trackId: String): String = trackId + "Adapt3"
+    override fun adapt(trackId: String): String = trackId + "Adapt4"
 }
 
 class TrackingAdapter5 @Inject constructor(): TrackingAdapter {
-    override fun adapt(trackId: String): String = trackId + "Adapt3"
+    override fun adapt(trackId: String): String = trackId + "Adapt5"
 }
 
 class TrackingAdapter6 @Inject constructor(): TrackingAdapter {
-    override fun adapt(trackId: String): String = trackId + "Adapt3"
+    override fun adapt(trackId: String): String = trackId + "Adapt6"
 }
 
 class TrackingAdapter7 @Inject constructor(): TrackingAdapter {
-    override fun adapt(trackId: String): String = trackId + "Adapt3"
+    override fun adapt(trackId: String): String = trackId + "Adapt7"
 }
 
 class TrackingAdapter8 @Inject constructor(): TrackingAdapter {
-    override fun adapt(trackId: String): String = trackId + "Adapt3"
+    override fun adapt(trackId: String): String = trackId + "Adapt8"
+}
+
+class TrackingAdapter9 @Inject constructor(
+    val optionalExporter: Optional<TrackingExporter>
+) : TrackingAdapter {
+    override fun adapt(trackId: String): String = trackId + "Adapt9" + optionalExporter.getOrNull()?.export(trackId)
 }
 
 

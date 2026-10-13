@@ -51,6 +51,6 @@ public final class TrackingAdapter7 implements TrackingAdapter {
     @Override // com.samples.interop.dagger.demo.tracking.TrackingAdapter
     public String adapt(String trackId) {
         Intrinsics.checkNotNullParameter(trackId, "trackId");
-        return trackId + "Adapt3";
+        return trackId + "Adapt7";
     }
 }

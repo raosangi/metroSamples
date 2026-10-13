@@ -6,10 +6,12 @@ import com.samples.metro.demo.network.ScreenDetailHandler
 import com.samples.metro.demo.tracking.NewTrackingQualifier
 import com.samples.metro.demo.tracking.OldTrackingQualifier
 import com.samples.metro.demo.tracking.TrackingAdapter
+import com.samples.metro.demo.tracking.TrackingExporter
 import com.samples.metro.demo.tracking.TrackingHandler
 import com.samples.metro.demo.tracking.TrackingIdentifier
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.DependencyGraph
+import dev.zacsweers.metro.OptionalBinding
 import dev.zacsweers.metro.createGraph
 import kotlin.reflect.KClass
 
@@ -30,6 +32,9 @@ interface AppComponent {
     val screenContextProviderMap: Map<String, () -> ScreenDetailHandler>
 
     val trackingTags: Map<KClass<*>, () -> TrackingIdentifier>
+
+    @OptionalBinding
+    val trackingExporter: TrackingExporter? get() = null
 
     val mainActivitySubComponentFactory: MainActivitySubComponent.Factory
 

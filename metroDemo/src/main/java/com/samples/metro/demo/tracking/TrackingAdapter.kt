@@ -2,6 +2,8 @@ package com.samples.metro.demo.tracking
 
 import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.Qualifier
+import java.util.Optional
+import kotlin.jvm.optionals.getOrNull
 
 @Qualifier
 annotation class OldTrackingQualifier
@@ -47,6 +49,11 @@ class TrackingAdapter8 @Inject constructor():
     override fun adapt(trackId: String): String = trackId + "Adapt8"
 }
 
+class TrackingAdapter9 @Inject constructor(
+    val optionalExporter: TrackingExporter? = null
+) : TrackingAdapter {
+    override fun adapt(trackId: String): String = trackId + "Adapt9" + optionalExporter?.export(trackId)
+}
 
 class MainActivityTrackingAdapter @Inject constructor(): TrackingAdapter {
     override fun adapt(trackId: String): String = trackId + "MainActivityAdapt4"
