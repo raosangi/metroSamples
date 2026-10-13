@@ -12,6 +12,7 @@ metro {
         includeDagger()
     }
     enableKClassToClassMapKeyInterop.set(true)
+    keysPerGraphShard.set(2)
     enableSwitchingProviders.set(true)
 }
 

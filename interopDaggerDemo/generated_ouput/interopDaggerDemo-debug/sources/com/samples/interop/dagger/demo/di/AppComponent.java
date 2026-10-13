@@ -100,41 +100,42 @@ public interface AppComponent {
     @MetroImplMarker
     public static final class Impl implements AppComponent {
         public static final int $stable = 0;
+        Shard1 shard1;
+        Shard2 shard2;
+
+        /* JADX INFO: compiled from: AppComponent.kt */
+        @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
+        private static final class Shard1 {
+            public Shard1(Impl graph) {
+                Intrinsics.checkNotNullParameter(graph, "graph");
+            }
+
+            @NewTrackingQualifier
+            public static /* synthetic */ void getSetOfTrackingAdapterProvider$interopDaggerDemo$annotations() {
+            }
+
+            @OldTrackingQualifier
+            public static /* synthetic */ void getSetOfTrackingAdapterProvider2$interopDaggerDemo$annotations() {
+            }
+
+            public final dev.zacsweers.metro.Provider<Set<TrackingAdapter>> getSetOfTrackingAdapterProvider$interopDaggerDemo() {
+                SetFactory.Builder builder = SetFactory.builder(6, 0);
+                builder.addProvider(TrackingAdapter3.MetroFactory.create());
+                builder.addProvider(TrackingAdapter4.MetroFactory.create());
+                builder.addProvider(TrackingAdapter5.MetroFactory.create());
+                builder.addProvider(TrackingAdapter6.MetroFactory.create());
+                builder.addProvider(TrackingAdapter7.MetroFactory.create());
+                builder.addProvider(TrackingAdapter8.MetroFactory.create());
+                return builder.build();
+            }
+
+            public final dev.zacsweers.metro.Provider<Set<TrackingAdapter>> getSetOfTrackingAdapterProvider2$interopDaggerDemo() {
+                return SetFactory.singleton(TrackingAdapter2.MetroFactory.create());
+            }
+        }
 
         public /* synthetic */ Impl(DefaultConstructorMarker defaultConstructorMarker) {
             this();
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public final Map<KClass<?>, Function0<TrackingIdentifier>> getMapOfKClass___ToTrackingIdentifier() {
-            Map mapCreateMapBuilder = MapsKt.createMapBuilder(1);
-            mapCreateMapBuilder.put(Reflection.getOrCreateKotlinClass(OldTrackingIdentifier.class), OldTrackingIdentifier.MetroFactory.create());
-            return MapsKt.build(mapCreateMapBuilder);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public final dev.zacsweers.metro.Provider<Set<TrackingAdapter>> getSetOfTrackingAdapterProvider() {
-            SetFactory.Builder builder = SetFactory.builder(6, 0);
-            builder.addProvider(TrackingAdapter3.MetroFactory.create());
-            builder.addProvider(TrackingAdapter4.MetroFactory.create());
-            builder.addProvider(TrackingAdapter5.MetroFactory.create());
-            builder.addProvider(TrackingAdapter6.MetroFactory.create());
-            builder.addProvider(TrackingAdapter7.MetroFactory.create());
-            builder.addProvider(TrackingAdapter8.MetroFactory.create());
-            return builder.build();
-        }
-
-        @NewTrackingQualifier
-        private static /* synthetic */ void getSetOfTrackingAdapterProvider$annotations() {
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public final dev.zacsweers.metro.Provider<Set<TrackingAdapter>> getSetOfTrackingAdapterProvider2() {
-            return SetFactory.singleton(TrackingAdapter2.MetroFactory.create());
-        }
-
-        @OldTrackingQualifier
-        private static /* synthetic */ void getSetOfTrackingAdapterProvider2$annotations() {
         }
 
         @NewTrackingQualifier
@@ -185,11 +186,8 @@ public interface AppComponent {
             public final void inject(MainActivity activity) {
                 Intrinsics.checkNotNullParameter(activity, "activity");
                 MainActivity.MetroMembersInjector.injectErrorHandler(activity, new DefaultErrorHandler());
-                MainActivity.MetroMembersInjector.injectTrackingHandler(activity, TrackingModule.INSTANCE.providesTrackingHandler(
-                        JavaxInteropKt.asJavaxProvider(this.appComponentImpl.getSetOfTrackingAdapterProvider2()),
-                        JavaxInteropKt.asJavaxProvider(this.appComponentImpl.getSetOfTrackingAdapterProvider()),
-                        this.appComponentImpl.getMapOfKClass___ToTrackingIdentifier()));
-                MainActivity.MetroMembersInjector.injectDataSource(activity, new DefaultDataSource(this.appComponentImpl.getMapOfStringToScreenDetailHandler()));
+                MainActivity.MetroMembersInjector.injectTrackingHandler(activity, TrackingModule.INSTANCE.providesTrackingHandler(JavaxInteropKt.asJavaxProvider(this.appComponentImpl.shard1.getSetOfTrackingAdapterProvider2$interopDaggerDemo()), JavaxInteropKt.asJavaxProvider(this.appComponentImpl.shard1.getSetOfTrackingAdapterProvider$interopDaggerDemo()), this.appComponentImpl.shard2.getMapOfKClass___ToTrackingIdentifier$interopDaggerDemo()));
+                MainActivity.MetroMembersInjector.injectDataSource(activity, new DefaultDataSource(this.appComponentImpl.shard2.getMapOfStringToScreenDetailHandler$interopDaggerDemo()));
                 MainActivity.MetroMembersInjector.injectMainViewModelSubcomponentFactory(activity, getFactoryFactory());
             }
 
@@ -226,7 +224,7 @@ public interface AppComponent {
 
                 @Override // com.samples.interop.dagger.demo.viewmodel.MainViewModelSubcomponent
                 public final MainViewModel getMainViewModel() {
-                    TrackingHandler trackingHandlerProvidesTrackingHandler = TrackingModule.INSTANCE.providesTrackingHandler(JavaxInteropKt.asJavaxProvider(this.mainActivitySubComponentImpl.appComponentImpl.getSetOfTrackingAdapterProvider2()), JavaxInteropKt.asJavaxProvider(this.mainActivitySubComponentImpl.appComponentImpl.getSetOfTrackingAdapterProvider()), this.mainActivitySubComponentImpl.appComponentImpl.getMapOfKClass___ToTrackingIdentifier());
+                    TrackingHandler trackingHandlerProvidesTrackingHandler = TrackingModule.INSTANCE.providesTrackingHandler(JavaxInteropKt.asJavaxProvider(this.mainActivitySubComponentImpl.appComponentImpl.shard1.getSetOfTrackingAdapterProvider2$interopDaggerDemo()), JavaxInteropKt.asJavaxProvider(this.mainActivitySubComponentImpl.appComponentImpl.shard1.getSetOfTrackingAdapterProvider$interopDaggerDemo()), this.mainActivitySubComponentImpl.appComponentImpl.shard2.getMapOfKClass___ToTrackingIdentifier$interopDaggerDemo());
                     Map mapCreateMapBuilder = MapsKt.createMapBuilder(2);
                     mapCreateMapBuilder.put("App", JavaxInteropKt.asJavaxProvider(AppScreenDetailHandler.MetroFactory.create()));
                     mapCreateMapBuilder.put("Main", JavaxInteropKt.asJavaxProvider(MainScreenDetailHandler.MetroFactory.create()));
@@ -236,6 +234,8 @@ public interface AppComponent {
         }
 
         private Impl() {
+            this.shard1 = new Shard1(this);
+            this.shard2 = new Shard2(this);
         }
 
         @Override // com.samples.interop.dagger.demo.di.AppComponent
@@ -245,34 +245,47 @@ public interface AppComponent {
 
         @Override // com.samples.interop.dagger.demo.di.AppComponent
         public final Map<String, Provider<ScreenDetailHandler>> getScreenContextProviderMap() {
-            return getMapOfStringToScreenDetailHandler();
+            return this.shard2.getMapOfStringToScreenDetailHandler$interopDaggerDemo();
         }
 
         @Override // com.samples.interop.dagger.demo.di.AppComponent
         public final Provider<Set<TrackingAdapter>> getTrackingAdapterNew() {
-            return JavaxInteropKt.asJavaxProvider(getSetOfTrackingAdapterProvider());
+            return JavaxInteropKt.asJavaxProvider(this.shard1.getSetOfTrackingAdapterProvider$interopDaggerDemo());
         }
 
         @Override // com.samples.interop.dagger.demo.di.AppComponent
         public final Provider<Set<TrackingAdapter>> getTrackingAdapterOld() {
-            return JavaxInteropKt.asJavaxProvider(getSetOfTrackingAdapterProvider2());
+            return JavaxInteropKt.asJavaxProvider(this.shard1.getSetOfTrackingAdapterProvider2$interopDaggerDemo());
         }
 
         @Override // com.samples.interop.dagger.demo.di.AppComponent
         public final Map<Class<?>, Function0<TrackingIdentifier>> getTrackingTags() {
-            Map<KClass<?>, Function0<TrackingIdentifier>> mapOfKClass___ToTrackingIdentifier = getMapOfKClass___ToTrackingIdentifier();
-            Map linkedHashMap = new LinkedHashMap(MapsKt.mapCapacity(mapOfKClass___ToTrackingIdentifier.size()));
-            for (Object obj : mapOfKClass___ToTrackingIdentifier.entrySet()) {
+            Map<KClass<?>, Function0<TrackingIdentifier>> mapOfKClass___ToTrackingIdentifier$interopDaggerDemo = this.shard2.getMapOfKClass___ToTrackingIdentifier$interopDaggerDemo();
+            Map linkedHashMap = new LinkedHashMap(MapsKt.mapCapacity(mapOfKClass___ToTrackingIdentifier$interopDaggerDemo.size()));
+            for (Object obj : mapOfKClass___ToTrackingIdentifier$interopDaggerDemo.entrySet()) {
                 linkedHashMap.put(JvmClassMappingKt.getJavaClass((KClass) ((Map.Entry) obj).getKey()), ((Map.Entry) obj).getValue());
             }
             return linkedHashMap;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public final Map<String, Provider<ScreenDetailHandler>> getMapOfStringToScreenDetailHandler() {
-            Map mapCreateMapBuilder = MapsKt.createMapBuilder(1);
-            mapCreateMapBuilder.put("App", JavaxInteropKt.asJavaxProvider(AppScreenDetailHandler.MetroFactory.create()));
-            return MapsKt.build(mapCreateMapBuilder);
+        /* JADX INFO: compiled from: AppComponent.kt */
+        @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
+        private static final class Shard2 {
+            public Shard2(Impl graph) {
+                Intrinsics.checkNotNullParameter(graph, "graph");
+            }
+
+            public final Map<KClass<?>, Function0<TrackingIdentifier>> getMapOfKClass___ToTrackingIdentifier$interopDaggerDemo() {
+                Map mapCreateMapBuilder = MapsKt.createMapBuilder(1);
+                mapCreateMapBuilder.put(Reflection.getOrCreateKotlinClass(OldTrackingIdentifier.class), OldTrackingIdentifier.MetroFactory.create());
+                return MapsKt.build(mapCreateMapBuilder);
+            }
+
+            public final Map<String, Provider<ScreenDetailHandler>> getMapOfStringToScreenDetailHandler$interopDaggerDemo() {
+                Map mapCreateMapBuilder = MapsKt.createMapBuilder(1);
+                mapCreateMapBuilder.put("App", JavaxInteropKt.asJavaxProvider(AppScreenDetailHandler.MetroFactory.create()));
+                return MapsKt.build(mapCreateMapBuilder);
+            }
         }
     }
 
