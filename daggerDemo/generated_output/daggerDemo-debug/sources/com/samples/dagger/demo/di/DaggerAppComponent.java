@@ -6,6 +6,7 @@ import com.samples.dagger.demo.AppVersionInfo;
 import com.samples.dagger.demo.MainActivity;
 import com.samples.dagger.demo.MainActivity_MembersInjector;
 import com.samples.dagger.demo.errors.DefaultErrorHandler;
+import com.samples.dagger.demo.errors.DefaultLogging;
 import com.samples.dagger.demo.network.DefaultDataSource;
 import com.samples.dagger.demo.network.ScreenContextProvider;
 import com.samples.dagger.demo.tracking.OldTrackingIdentifier;
@@ -130,7 +131,7 @@ public final class DaggerAppComponent {
         }
 
         private MainActivity injectMainActivity(MainActivity instance) {
-            MainActivity_MembersInjector.injectErrorHandler(instance, new DefaultErrorHandler());
+            MainActivity_MembersInjector.injectErrorHandler(instance, this.appComponentImpl.defaultErrorHandler());
             MainActivity_MembersInjector.injectTrackingHandler(instance, this.appComponentImpl.trackingHandler());
             MainActivity_MembersInjector.injectDataSource(instance, this.appComponentImpl.defaultDataSource());
             MainActivity_MembersInjector.injectMainViewModelSubcomponentFactory(instance, new MainViewModelSubcomponentFactory(this.appComponentImpl, this.mainActivitySubComponentImpl));
@@ -147,6 +148,10 @@ public final class DaggerAppComponent {
 
         AppComponentImpl() {
             initialize();
+        }
+
+        DefaultErrorHandler defaultErrorHandler() {
+            return new DefaultErrorHandler(new DefaultLogging());
         }
 
         Map<Class<?>, javax.inject.Provider<TrackingIdentifier>> mapOfClassOfObjectAndProviderOfTrackingIdentifier() {

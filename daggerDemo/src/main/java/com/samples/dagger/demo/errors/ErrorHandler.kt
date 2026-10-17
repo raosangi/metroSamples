@@ -8,8 +8,10 @@ interface ErrorHandler {
     fun handleError(message: String)
 }
 
-class DefaultErrorHandler @Inject constructor(): ErrorHandler {
+class DefaultErrorHandler @Inject constructor(defaultLogging: DefaultLogging): ErrorHandler {
     override fun handleError(message: String) {
         Log.d("ErrorHandler", message)
     }
 }
+
+class DefaultLogging @Inject constructor()

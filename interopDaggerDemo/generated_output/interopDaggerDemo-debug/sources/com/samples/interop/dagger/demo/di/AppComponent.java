@@ -5,6 +5,7 @@ import com.samples.interop.dagger.demo.AppNameInfo;
 import com.samples.interop.dagger.demo.AppVersionInfo;
 import com.samples.interop.dagger.demo.MainActivity;
 import com.samples.interop.dagger.demo.errors.DefaultErrorHandler;
+import com.samples.interop.dagger.demo.errors.DefaultLogging;
 import com.samples.interop.dagger.demo.network.AppScreenDetailHandler;
 import com.samples.interop.dagger.demo.network.DefaultDataSource;
 import com.samples.interop.dagger.demo.network.ScreenContextProvider;
@@ -189,7 +190,7 @@ public interface AppComponent {
             @Override // com.samples.interop.dagger.demo.di.MainActivitySubComponent
             public final void inject(MainActivity activity) {
                 Intrinsics.checkNotNullParameter(activity, "activity");
-                MainActivity.MetroMembersInjector.injectErrorHandler(activity, new DefaultErrorHandler());
+                MainActivity.MetroMembersInjector.injectErrorHandler(activity, new DefaultErrorHandler(new DefaultLogging()));
                 MainActivity.MetroMembersInjector.injectTrackingHandler(activity, getProvidesTrackingHandler());
                 MainActivity.MetroMembersInjector.injectDataSource(activity, new DefaultDataSource(new ScreenContextProvider(new AppNameInfo(), new AppVersionInfo()), getProvidesTrackingHandler()));
                 MainActivity.MetroMembersInjector.injectMainViewModelSubcomponentFactory(activity, getFactoryFactory());

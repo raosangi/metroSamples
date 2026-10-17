@@ -5,6 +5,7 @@ import com.samples.metro.demo.AppNameInfo;
 import com.samples.metro.demo.AppVersionInfo;
 import com.samples.metro.demo.MainActivity;
 import com.samples.metro.demo.errors.DefaultErrorHandler;
+import com.samples.metro.demo.errors.DefaultLogging;
 import com.samples.metro.demo.network.AppScreenDetailHandler;
 import com.samples.metro.demo.network.DataSource;
 import com.samples.metro.demo.network.DefaultDataSource;
@@ -168,7 +169,7 @@ public interface AppComponent {
             @Override // com.samples.metro.demo.di.MainActivitySubComponent
             public final void inject(MainActivity activity) {
                 Intrinsics.checkNotNullParameter(activity, "activity");
-                MainActivity.MetroMembersInjector.injectErrorHandler(activity, new DefaultErrorHandler());
+                MainActivity.MetroMembersInjector.injectErrorHandler(activity, new DefaultErrorHandler(new DefaultLogging()));
                 MainActivity.MetroMembersInjector.injectTrackingHandler(activity, this.appComponentImpl.getProvidesTrackingHandler());
                 MainActivity.MetroMembersInjector.injectDataSource(activity, this.appComponentImpl.getDefaultDataSource());
                 MainActivity.MetroMembersInjector.injectMainViewModelSubcomponentFactory(activity, getFactoryFactory());
