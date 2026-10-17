@@ -33,6 +33,9 @@ interface AppComponent {
 
     val trackingTags: Map<KClass<*>, () -> TrackingIdentifier>
 
+    val dataSource: DataSource
+
+
     @OptionalBinding
     val trackingExporter: TrackingExporter? get() = null
 

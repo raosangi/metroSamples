@@ -1,6 +1,7 @@
 package com.samples.interop.dagger.demo.tracking
 
 import android.util.Log
+import com.samples.interop.dagger.demo.network.DataSource
 import dagger.Provides
 import javax.inject.Inject
 import javax.inject.Provider

@@ -1,5 +1,6 @@
 package com.samples.dagger.demo.di
 
+import com.samples.dagger.demo.network.DataSource
 import com.samples.dagger.demo.tracking.DefaultTrackingHandler
 import com.samples.dagger.demo.tracking.NewTrackingQualifier
 import com.samples.dagger.demo.tracking.OldTrackingIdentifier
@@ -70,6 +71,7 @@ interface TrackingModule {
             @OldTrackingQualifier oldTrackingAdapter: Provider<Set<@JvmSuppressWildcards TrackingAdapter>>,
             @NewTrackingQualifier newTrackingAdapter: Provider<Set<@JvmSuppressWildcards TrackingAdapter>>,
             trackingTags: Map<Class<*>,@JvmSuppressWildcards Provider<TrackingIdentifier>>,
-        ): TrackingHandler = DefaultTrackingHandler(oldTrackingAdapter, newTrackingAdapter, trackingTags)
+        ): TrackingHandler =
+            DefaultTrackingHandler(oldTrackingAdapter, newTrackingAdapter, trackingTags)
     }
 }

@@ -1,7 +1,6 @@
 package com.samples.metro.demo.tracking
 
 import android.util.Log
-import dev.zacsweers.metro.Inject
 import kotlin.collections.fold
 import kotlin.reflect.KClass
 
