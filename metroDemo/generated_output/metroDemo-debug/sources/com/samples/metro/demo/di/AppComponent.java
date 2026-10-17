@@ -86,24 +86,22 @@ public interface AppComponent {
     }
 
     /* JADX INFO: compiled from: AppComponent.kt */
-    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0007\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003Ê\u0001\u0018\b\u0005\u0012\b\b\u0006\u0012\u0004\b\b(\u0007\u0012\n\b\b\u0012\u0006\b\n0\t8\nÊ\u0001\u0002\b\u000bÊ\u0001\f\b\f\u0012\b\b\r\u0012\u0004\b\u0003\u0010\u0000\u008a\u0002È\u0001\b\u000e\u0012Ã\u0001\b\u0001\u0012¾\u0001\b\u0001\u001a\u0010<get-dataSource>\u001a%<get-mainActivitySubComponentFactory>\u001a\u001e<get-screenContextProviderMap>\u001a\u0018<get-trackingAdapterNew>\u001a\u0018<get-trackingAdapterOld>\u001a\u0016<get-trackingExporter>\u001a\u0012<get-trackingTags>\"\u0001\\¨\u0006\u0004"}, d2 = {"Lcom/samples/metro/demo/di/AppComponent$Impl;", "Lcom/samples/metro/demo/di/AppComponent;", "<init>", "()V", "metroDemo", "Lkotlin/Deprecated;", "message", "This synthesized declaration should not be used directly", "level", "Lkotlin/DeprecationLevel;", "HIDDEN", "Ldev/zacsweers/metro/internal/MetroImplMarker;", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters", "dev.zacsweers.metro.compiler"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0007\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003Ê\u0001\u0018\b\u0005\u0012\b\b\u0006\u0012\u0004\b\b(\u0007\u0012\n\b\b\u0012\u0006\b\n0\t8\nÊ\u0001\u0002\b\u000bÊ\u0001\f\b\f\u0012\b\b\r\u0012\u0004\b\u0003\u0010\u0002\u008a\u0002È\u0001\b\u000e\u0012Ã\u0001\b\u0001\u0012¾\u0001\b\u0001\u001a\u0010<get-dataSource>\u001a%<get-mainActivitySubComponentFactory>\u001a\u001e<get-screenContextProviderMap>\u001a\u0018<get-trackingAdapterNew>\u001a\u0018<get-trackingAdapterOld>\u001a\u0016<get-trackingExporter>\u001a\u0012<get-trackingTags>\"\u0001\\¨\u0006\u0004"}, d2 = {"Lcom/samples/metro/demo/di/AppComponent$Impl;", "Lcom/samples/metro/demo/di/AppComponent;", "<init>", "()V", "metroDemo", "Lkotlin/Deprecated;", "message", "This synthesized declaration should not be used directly", "level", "Lkotlin/DeprecationLevel;", "HIDDEN", "Ldev/zacsweers/metro/internal/MetroImplMarker;", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters", "dev.zacsweers.metro.compiler"}, k = 1, mv = {2, 4, 0}, xi = 48)
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "This synthesized declaration should not be used directly")
     @MetroImplMarker
     public static final class Impl implements AppComponent {
-        public static final int $stable = 8;
-        private final Impl thisGraphInstance;
+        public static final int $stable = 0;
 
         /* JADX INFO: compiled from: AppComponent.kt */
         @DependencyGraph
         @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
         private static final class MainActivitySubComponentImpl implements MainActivitySubComponent {
-            private Impl appComponentImpl;
-            private final MainActivitySubComponentImpl thisGraphInstance;
+            Impl appComponentImpl;
 
             /* JADX INFO: compiled from: AppComponent.kt */
             @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
             private static final class FactoryImpl implements MainActivitySubComponent.Factory {
-                private final Impl AppComponentImpl;
+                final Impl AppComponentImpl;
 
                 public FactoryImpl(Impl AppComponentImpl) {
                     Intrinsics.checkNotNullParameter(AppComponentImpl, "AppComponentImpl");
@@ -120,13 +118,13 @@ public interface AppComponent {
             @DependencyGraph(bindingContainers = {MainViewModelTrackingModule.class})
             @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
             private static final class MainViewModelSubcomponentImpl implements MainViewModelSubcomponent {
-                private MainActivitySubComponentImpl mainActivitySubComponentImpl;
-                private final SavedStateHandle savedStateHandleInstance;
+                MainActivitySubComponentImpl mainActivitySubComponentImpl;
+                final SavedStateHandle savedStateHandleInstance;
 
                 /* JADX INFO: compiled from: AppComponent.kt */
                 @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
                 private static final class FactoryImpl implements MainViewModelSubcomponent.Factory {
-                    private final MainActivitySubComponentImpl MainActivitySubComponentImpl;
+                    final MainActivitySubComponentImpl MainActivitySubComponentImpl;
 
                     public FactoryImpl(MainActivitySubComponentImpl MainActivitySubComponentImpl) {
                         Intrinsics.checkNotNullParameter(MainActivitySubComponentImpl, "MainActivitySubComponentImpl");
@@ -147,88 +145,19 @@ public interface AppComponent {
                     this.savedStateHandleInstance = savedStateHandle;
                 }
 
-                private final Map<KClass<?>, Function0<TrackingIdentifier>> getMapOfKClass___ToTrackingIdentifier() {
-                    Map mapCreateMapBuilder = MapsKt.createMapBuilder(1);
-                    mapCreateMapBuilder.put(Reflection.getOrCreateKotlinClass(OldTrackingIdentifier.class), OldTrackingIdentifier.MetroFactory.create());
-                    return MapsKt.build(mapCreateMapBuilder);
-                }
-
-                private final TrackingHandler getProvidesTrackingHandler() {
-                    return TrackingModule.INSTANCE.providesTrackingHandler(getSetOfTrackingAdapterProvider2(), getSetOfTrackingAdapterProvider(), getMapOfKClass___ToTrackingIdentifier());
-                }
-
-                private final Provider<Set<TrackingAdapter>> getSetOfTrackingAdapterProvider() {
-                    SetFactory.Builder builder = SetFactory.INSTANCE.builder(7, 0);
-                    builder.addProvider(TrackingAdapter9.MetroFactory.Companion.create$default(TrackingAdapter9.MetroFactory.Companion, null, 1, null));
-                    builder.addProvider(TrackingAdapter7.MetroFactory.create());
-                    builder.addProvider(TrackingAdapter5.MetroFactory.create());
-                    builder.addProvider(TrackingAdapter3.MetroFactory.create());
-                    builder.addProvider(TrackingAdapter4.MetroFactory.create());
-                    builder.addProvider(TrackingAdapter6.MetroFactory.create());
-                    builder.addProvider(TrackingAdapter8.MetroFactory.create());
-                    return builder.build();
-                }
-
-                @NewTrackingQualifier
-                private static /* synthetic */ void getSetOfTrackingAdapterProvider$annotations() {
-                }
-
-                private final Provider<Set<TrackingAdapter>> getSetOfTrackingAdapterProvider2() {
-                    return SetFactory.INSTANCE.singleton(TrackingAdapter2.MetroFactory.create());
-                }
-
-                @OldTrackingQualifier
-                private static /* synthetic */ void getSetOfTrackingAdapterProvider2$annotations() {
-                }
-
                 @Override // com.samples.metro.demo.viewmodel.MainViewModelSubcomponent
                 public final MainViewModel getMainViewModel() {
-                    return new MainViewModel(getProvidesTrackingHandler(), new DefaultDataSource(new ScreenContextProvider(new AppNameInfo(), new AppVersionInfo()), getProvidesTrackingHandler()), this.savedStateHandleInstance);
+                    return new MainViewModel(this.mainActivitySubComponentImpl.appComponentImpl.getProvidesTrackingHandler(), this.mainActivitySubComponentImpl.appComponentImpl.getDefaultDataSource(), this.savedStateHandleInstance);
                 }
             }
 
             public MainActivitySubComponentImpl(Impl appComponentImpl) {
                 Intrinsics.checkNotNullParameter(appComponentImpl, "appComponentImpl");
                 this.appComponentImpl = appComponentImpl;
-                this.thisGraphInstance = this;
             }
 
             private final MainViewModelSubcomponent.Factory getFactoryFactory() {
-                return new MainViewModelSubcomponentImpl.FactoryImpl(this.thisGraphInstance);
-            }
-
-            private final Map<KClass<?>, Function0<TrackingIdentifier>> getMapOfKClass___ToTrackingIdentifier() {
-                Map mapCreateMapBuilder = MapsKt.createMapBuilder(1);
-                mapCreateMapBuilder.put(Reflection.getOrCreateKotlinClass(OldTrackingIdentifier.class), OldTrackingIdentifier.MetroFactory.create());
-                return MapsKt.build(mapCreateMapBuilder);
-            }
-
-            private final TrackingHandler getProvidesTrackingHandler() {
-                return TrackingModule.INSTANCE.providesTrackingHandler(getSetOfTrackingAdapterProvider2(), getSetOfTrackingAdapterProvider(), getMapOfKClass___ToTrackingIdentifier());
-            }
-
-            private final Provider<Set<TrackingAdapter>> getSetOfTrackingAdapterProvider() {
-                SetFactory.Builder builder = SetFactory.INSTANCE.builder(7, 0);
-                builder.addProvider(TrackingAdapter9.MetroFactory.Companion.create$default(TrackingAdapter9.MetroFactory.Companion, null, 1, null));
-                builder.addProvider(TrackingAdapter7.MetroFactory.create());
-                builder.addProvider(TrackingAdapter5.MetroFactory.create());
-                builder.addProvider(TrackingAdapter3.MetroFactory.create());
-                builder.addProvider(TrackingAdapter4.MetroFactory.create());
-                builder.addProvider(TrackingAdapter6.MetroFactory.create());
-                builder.addProvider(TrackingAdapter8.MetroFactory.create());
-                return builder.build();
-            }
-
-            @NewTrackingQualifier
-            private static /* synthetic */ void getSetOfTrackingAdapterProvider$annotations() {
-            }
-
-            private final Provider<Set<TrackingAdapter>> getSetOfTrackingAdapterProvider2() {
-                return SetFactory.INSTANCE.singleton(TrackingAdapter2.MetroFactory.create());
-            }
-
-            @OldTrackingQualifier
-            private static /* synthetic */ void getSetOfTrackingAdapterProvider2$annotations() {
+                return new MainViewModelSubcomponentImpl.FactoryImpl(this);
             }
 
             @Override // com.samples.metro.demo.di.MainActivitySubComponent
@@ -239,15 +168,20 @@ public interface AppComponent {
             @Override // com.samples.metro.demo.di.MainActivitySubComponent
             public final void inject(MainActivity activity) {
                 Intrinsics.checkNotNullParameter(activity, "activity");
-                MainActivity.MetroMembersInjector.Companion.injectErrorHandler(activity, new DefaultErrorHandler());
-                MainActivity.MetroMembersInjector.Companion.injectTrackingHandler(activity, getProvidesTrackingHandler());
-                MainActivity.MetroMembersInjector.Companion.injectDataSource(activity, new DefaultDataSource(new ScreenContextProvider(new AppNameInfo(), new AppVersionInfo()), getProvidesTrackingHandler()));
-                MainActivity.MetroMembersInjector.Companion.injectMainViewModelSubcomponentFactory(activity, getFactoryFactory());
+                MainActivity.MetroMembersInjector.injectErrorHandler(activity, new DefaultErrorHandler());
+                MainActivity.MetroMembersInjector.injectTrackingHandler(activity, this.appComponentImpl.getProvidesTrackingHandler());
+                MainActivity.MetroMembersInjector.injectDataSource(activity, this.appComponentImpl.getDefaultDataSource());
+                MainActivity.MetroMembersInjector.injectMainViewModelSubcomponentFactory(activity, getFactoryFactory());
             }
         }
 
         public /* synthetic */ Impl(DefaultConstructorMarker defaultConstructorMarker) {
             this();
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public final DefaultDataSource getDefaultDataSource() {
+            return new DefaultDataSource(new ScreenContextProvider(new AppNameInfo(), new AppVersionInfo()), getProvidesTrackingHandler());
         }
 
         private final Map<KClass<?>, Function0<TrackingIdentifier>> getMapOfKClass___ToTrackingIdentifier() {
@@ -256,15 +190,20 @@ public interface AppComponent {
             return MapsKt.build(mapCreateMapBuilder);
         }
 
+        /* JADX INFO: Access modifiers changed from: private */
+        public final TrackingHandler getProvidesTrackingHandler() {
+            return TrackingModule.INSTANCE.providesTrackingHandler(getSetOfTrackingAdapterProvider2(), getSetOfTrackingAdapterProvider(), getMapOfKClass___ToTrackingIdentifier());
+        }
+
         private final Provider<Set<TrackingAdapter>> getSetOfTrackingAdapterProvider() {
-            SetFactory.Builder builder = SetFactory.INSTANCE.builder(7, 0);
+            SetFactory.Builder builder = SetFactory.builder(7, 0);
             builder.addProvider(TrackingAdapter9.MetroFactory.Companion.create$default(TrackingAdapter9.MetroFactory.Companion, null, 1, null));
-            builder.addProvider(TrackingAdapter7.MetroFactory.create());
-            builder.addProvider(TrackingAdapter5.MetroFactory.create());
-            builder.addProvider(TrackingAdapter3.MetroFactory.create());
-            builder.addProvider(TrackingAdapter4.MetroFactory.create());
-            builder.addProvider(TrackingAdapter6.MetroFactory.create());
             builder.addProvider(TrackingAdapter8.MetroFactory.create());
+            builder.addProvider(TrackingAdapter7.MetroFactory.create());
+            builder.addProvider(TrackingAdapter6.MetroFactory.create());
+            builder.addProvider(TrackingAdapter5.MetroFactory.create());
+            builder.addProvider(TrackingAdapter4.MetroFactory.create());
+            builder.addProvider(TrackingAdapter3.MetroFactory.create());
             return builder.build();
         }
 
@@ -273,7 +212,7 @@ public interface AppComponent {
         }
 
         private final Provider<Set<TrackingAdapter>> getSetOfTrackingAdapterProvider2() {
-            return SetFactory.INSTANCE.singleton(TrackingAdapter2.MetroFactory.create());
+            return SetFactory.singleton(TrackingAdapter2.MetroFactory.create());
         }
 
         @OldTrackingQualifier
@@ -289,22 +228,23 @@ public interface AppComponent {
         }
 
         private Impl() {
-            this.thisGraphInstance = this;
         }
 
         @Override // com.samples.metro.demo.di.AppComponent
         public final DataSource getDataSource() {
-            return new DefaultDataSource(new ScreenContextProvider(new AppNameInfo(), new AppVersionInfo()), TrackingModule.INSTANCE.providesTrackingHandler(getSetOfTrackingAdapterProvider2(), getSetOfTrackingAdapterProvider(), getMapOfKClass___ToTrackingIdentifier()));
+            return getDefaultDataSource();
         }
 
         @Override // com.samples.metro.demo.di.AppComponent
         public final MainActivitySubComponent.Factory getMainActivitySubComponentFactory() {
-            return new MainActivitySubComponentImpl.FactoryImpl(this.thisGraphInstance);
+            return new MainActivitySubComponentImpl.FactoryImpl(this);
         }
 
         @Override // com.samples.metro.demo.di.AppComponent
         public final Map<String, Function0<ScreenDetailHandler>> getScreenContextProviderMap() {
-            return getMapOfStringToScreenDetailHandler();
+            Map mapCreateMapBuilder = MapsKt.createMapBuilder(1);
+            mapCreateMapBuilder.put("App", AppScreenDetailHandler.MetroFactory.create());
+            return MapsKt.build(mapCreateMapBuilder);
         }
 
         @Override // com.samples.metro.demo.di.AppComponent
@@ -325,12 +265,6 @@ public interface AppComponent {
         @Override // com.samples.metro.demo.di.AppComponent
         public final Map<KClass<?>, Function0<TrackingIdentifier>> getTrackingTags() {
             return getMapOfKClass___ToTrackingIdentifier();
-        }
-
-        private final Map<String, Function0<ScreenDetailHandler>> getMapOfStringToScreenDetailHandler() {
-            Map mapCreateMapBuilder = MapsKt.createMapBuilder(1);
-            mapCreateMapBuilder.put("App", AppScreenDetailHandler.MetroFactory.create());
-            return MapsKt.build(mapCreateMapBuilder);
         }
     }
 

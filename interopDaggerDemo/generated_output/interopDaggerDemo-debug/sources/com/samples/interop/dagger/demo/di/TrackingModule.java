@@ -16,13 +16,13 @@ import com.samples.interop.dagger.demo.tracking.TrackingAdapter9;
 import com.samples.interop.dagger.demo.tracking.TrackingExporter;
 import com.samples.interop.dagger.demo.tracking.TrackingHandler;
 import com.samples.interop.dagger.demo.tracking.TrackingIdentifier;
+import dagger.Binds;
 import dagger.BindsOptionalOf;
 import dagger.Module;
 import dagger.Provides;
 import dagger.multibindings.ClassKey;
-import dev.zacsweers.metro.Binds;
-import dev.zacsweers.metro.IntoMap;
-import dev.zacsweers.metro.IntoSet;
+import dagger.multibindings.IntoMap;
+import dagger.multibindings.IntoSet;
 import dev.zacsweers.metro.Provider;
 import dev.zacsweers.metro.internal.CallableMetadata;
 import dev.zacsweers.metro.internal.Factory;
@@ -40,7 +40,7 @@ import kotlin.reflect.KClass;
 
 /* JADX INFO: compiled from: TrackingModule.kt */
 /* JADX INFO: loaded from: classes3.dex */
-@Metadata(d1 = {"\u0000t\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\bg\u0018\u0000 !2\u00020\u0001:\u0002!\"J\u001c\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H'b\u0002\b\u0006b\u0002\b\u0007b\u0002\b\bJ\u001c\u0010\t\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\nH'b\u0002\b\u0006b\u0002\b\u0007b\u0002\b\u000bJ\u001c\u0010\f\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\rH'b\u0002\b\u0006b\u0002\b\u0007b\u0002\b\u000bJ\u001c\u0010\u000e\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u000fH'b\u0002\b\u0006b\u0002\b\u0007b\u0002\b\u000bJ\u001c\u0010\u0010\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0011H'b\u0002\b\u0006b\u0002\b\u0007b\u0002\b\u000bJ\u001c\u0010\u0012\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0013H'b\u0002\b\u0006b\u0002\b\u0007b\u0002\b\u000bJ\u001c\u0010\u0014\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0015H'b\u0002\b\u0006b\u0002\b\u0007b\u0002\b\u000bJ\u001c\u0010\u0016\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0017H'b\u0002\b\u0006b\u0002\b\u0007b\u0002\b\u000bJ\f\u0010\u0018\u001a\u00020\u0019H'b\u0002\b\u001aJ&\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u0004\u001a\u00020\u001dH'b\u0002\b\u0007b\u0002\b\u001eb\f\b\u001f\u0012\b\b \u0012\u0004\b\t0\u001dÊ\u0001\u0002\b$\u008a\u0002 \u0001\b%\u0012\u009b\u0001\b\u0001\u0012\u0096\u0001\u0012\u0093\u0001\n_com/samples/interop/dagger/demo/di/TrackingModule.Companion.ProvidesTrackingHandlerMetroFactory\"\u0017providesTrackingHandler2\u0017providesTrackingHandler¨\u0006#À\u0006\u0003"}, d2 = {"Lcom/samples/interop/dagger/demo/di/TrackingModule;", "", "bindsTrackingAdapter2", "Lcom/samples/interop/dagger/demo/tracking/TrackingAdapter;", "instance", "Lcom/samples/interop/dagger/demo/tracking/TrackingAdapter2;", "Ldagger/multibindings/IntoSet;", "Ldagger/Binds;", "Lcom/samples/interop/dagger/demo/tracking/OldTrackingQualifier;", "bindsTrackingAdapter3", "Lcom/samples/interop/dagger/demo/tracking/TrackingAdapter3;", "Lcom/samples/interop/dagger/demo/tracking/NewTrackingQualifier;", "bindsTrackingAdapter4", "Lcom/samples/interop/dagger/demo/tracking/TrackingAdapter4;", "bindsTrackingAdapter5", "Lcom/samples/interop/dagger/demo/tracking/TrackingAdapter5;", "bindsTrackingAdapter6", "Lcom/samples/interop/dagger/demo/tracking/TrackingAdapter6;", "bindsTrackingAdapter7", "Lcom/samples/interop/dagger/demo/tracking/TrackingAdapter7;", "bindsTrackingAdapter8", "Lcom/samples/interop/dagger/demo/tracking/TrackingAdapter8;", "bindsTrackingAdapter9", "Lcom/samples/interop/dagger/demo/tracking/TrackingAdapter9;", "bindsOptionalOf", "Lcom/samples/interop/dagger/demo/tracking/TrackingExporter;", "Ldagger/BindsOptionalOf;", "providesStringTag", "Lcom/samples/interop/dagger/demo/tracking/TrackingIdentifier;", "Lcom/samples/interop/dagger/demo/tracking/OldTrackingIdentifier;", "Ldagger/multibindings/IntoMap;", "Ldagger/multibindings/ClassKey;", "value", "Companion", "BindsMirror", "interopDaggerDemo", "Ldagger/Module;", "dev.zacsweers.metro.compiler"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000t\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\bg\u0018\u0000 !2\u00020\u0001:\u0001!J\u001c\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H'b\u0002\b\u0006b\u0002\b\u0007b\u0002\b\bJ\u001c\u0010\t\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\nH'b\u0002\b\u0006b\u0002\b\u0007b\u0002\b\u000bJ\u001c\u0010\f\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\rH'b\u0002\b\u0006b\u0002\b\u0007b\u0002\b\u000bJ\u001c\u0010\u000e\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u000fH'b\u0002\b\u0006b\u0002\b\u0007b\u0002\b\u000bJ\u001c\u0010\u0010\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0011H'b\u0002\b\u0006b\u0002\b\u0007b\u0002\b\u000bJ\u001c\u0010\u0012\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0013H'b\u0002\b\u0006b\u0002\b\u0007b\u0002\b\u000bJ\u001c\u0010\u0014\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0015H'b\u0002\b\u0006b\u0002\b\u0007b\u0002\b\u000bJ\u001c\u0010\u0016\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0017H'b\u0002\b\u0006b\u0002\b\u0007b\u0002\b\u000bJ\f\u0010\u0018\u001a\u00020\u0019H'b\u0002\b\u001aJ&\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u0004\u001a\u00020\u001dH'b\u0002\b\u0007b\u0002\b\u001eb\f\b\u001f\u0012\b\b \u0012\u0004\b\t0\u001dÊ\u0001\u0002\b#\u008a\u0002 \u0001\b$\u0012\u009b\u0001\b\u0001\u0012\u0096\u0001\u0012\u0093\u0001\n_com/samples/interop/dagger/demo/di/TrackingModule.Companion.ProvidesTrackingHandlerMetroFactory\"\u0017providesTrackingHandler2\u0017providesTrackingHandler¨\u0006\"À\u0006\u0003"}, d2 = {"Lcom/samples/interop/dagger/demo/di/TrackingModule;", "", "bindsTrackingAdapter2", "Lcom/samples/interop/dagger/demo/tracking/TrackingAdapter;", "instance", "Lcom/samples/interop/dagger/demo/tracking/TrackingAdapter2;", "Ldagger/multibindings/IntoSet;", "Ldagger/Binds;", "Lcom/samples/interop/dagger/demo/tracking/OldTrackingQualifier;", "bindsTrackingAdapter3", "Lcom/samples/interop/dagger/demo/tracking/TrackingAdapter3;", "Lcom/samples/interop/dagger/demo/tracking/NewTrackingQualifier;", "bindsTrackingAdapter4", "Lcom/samples/interop/dagger/demo/tracking/TrackingAdapter4;", "bindsTrackingAdapter5", "Lcom/samples/interop/dagger/demo/tracking/TrackingAdapter5;", "bindsTrackingAdapter6", "Lcom/samples/interop/dagger/demo/tracking/TrackingAdapter6;", "bindsTrackingAdapter7", "Lcom/samples/interop/dagger/demo/tracking/TrackingAdapter7;", "bindsTrackingAdapter8", "Lcom/samples/interop/dagger/demo/tracking/TrackingAdapter8;", "bindsTrackingAdapter9", "Lcom/samples/interop/dagger/demo/tracking/TrackingAdapter9;", "bindsOptionalOf", "Lcom/samples/interop/dagger/demo/tracking/TrackingExporter;", "Ldagger/BindsOptionalOf;", "providesStringTag", "Lcom/samples/interop/dagger/demo/tracking/TrackingIdentifier;", "Lcom/samples/interop/dagger/demo/tracking/OldTrackingIdentifier;", "Ldagger/multibindings/IntoMap;", "Ldagger/multibindings/ClassKey;", "value", "Companion", "interopDaggerDemo", "Ldagger/Module;", "dev.zacsweers.metro.compiler"}, k = 1, mv = {2, 4, 0}, xi = 48)
 @Module
 public interface TrackingModule {
 
@@ -48,108 +48,11 @@ public interface TrackingModule {
     public static final Companion INSTANCE = Companion.$$INSTANCE;
 
     /* JADX INFO: compiled from: TrackingModule.kt */
-    @Deprecated(level = DeprecationLevel.HIDDEN, message = "This synthesized declaration should not be used directly")
-    @Metadata(d1 = {"\u0000\u009a\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b'\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J:\u0010\u0004\u001a\u00020\u0005H\u0007b\u0002\b\u0006b,\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\b\b\n\u0012\u0004\b\b(\u000b\u0012\t\b\f\u0012\u0005\b\u0003\u0010¦%\u0012\t\b\r\u0012\u0005\b\u0003\u0010ô%JJ\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0007b\u0002\b\u0012b\u0002\b\u0013b\u0002\b\u0014b,\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u0015\u0012\b\b\n\u0012\u0004\b\b(\u000b\u0012\t\b\f\u0012\u0005\b\u0003\u0010à\u0016\u0012\t\b\r\u0012\u0005\b\u0003\u0010î\u0017JJ\u0010\u0016\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0017H\u0007b\u0002\b\u0012b\u0002\b\u0013b\u0002\b\u0018b,\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u0019\u0012\b\b\n\u0012\u0004\b\b(\u000b\u0012\t\b\f\u0012\u0005\b\u0003\u0010Î\u0018\u0012\t\b\r\u0012\u0005\b\u0003\u0010Ü\u0019JJ\u0010\u001a\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u001bH\u0007b\u0002\b\u0012b\u0002\b\u0013b\u0002\b\u0018b,\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u001c\u0012\b\b\n\u0012\u0004\b\b(\u000b\u0012\t\b\f\u0012\u0005\b\u0003\u0010¼\u001a\u0012\t\b\r\u0012\u0005\b\u0003\u0010Ê\u001bJJ\u0010\u001d\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u001eH\u0007b\u0002\b\u0012b\u0002\b\u0013b\u0002\b\u0018b,\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u001f\u0012\b\b\n\u0012\u0004\b\b(\u000b\u0012\t\b\f\u0012\u0005\b\u0003\u0010ª\u001c\u0012\t\b\r\u0012\u0005\b\u0003\u0010¸\u001dJJ\u0010 \u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020!H\u0007b\u0002\b\u0012b\u0002\b\u0013b\u0002\b\u0018b,\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\"\u0012\b\b\n\u0012\u0004\b\b(\u000b\u0012\t\b\f\u0012\u0005\b\u0003\u0010\u0098\u001e\u0012\t\b\r\u0012\u0005\b\u0003\u0010¦\u001fJJ\u0010#\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020$H\u0007b\u0002\b\u0012b\u0002\b\u0013b\u0002\b\u0018b,\b\u0007\u0012\b\b\b\u0012\u0004\b\b(%\u0012\b\b\n\u0012\u0004\b\b(\u000b\u0012\t\b\f\u0012\u0005\b\u0003\u0010\u0086 \u0012\t\b\r\u0012\u0005\b\u0003\u0010\u0094!JJ\u0010&\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020'H\u0007b\u0002\b\u0012b\u0002\b\u0013b\u0002\b\u0018b,\b\u0007\u0012\b\b\b\u0012\u0004\b\b((\u0012\b\b\n\u0012\u0004\b\b(\u000b\u0012\t\b\f\u0012\u0005\b\u0003\u0010ô!\u0012\t\b\r\u0012\u0005\b\u0003\u0010\u0082#JJ\u0010)\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020*H\u0007b\u0002\b\u0012b\u0002\b\u0013b\u0002\b\u0018b,\b\u0007\u0012\b\b\b\u0012\u0004\b\b(+\u0012\b\b\n\u0012\u0004\b\b(\u000b\u0012\t\b\f\u0012\u0005\b\u0003\u0010â#\u0012\t\b\r\u0012\u0005\b\u0003\u0010ð$JT\u0010,\u001a\u00020-2\u0006\u0010\u0010\u001a\u00020.H\u0007b\u0002\b\u0012b\u0002\b/b\f\b0\u0012\b\b1\u0012\u0004\b\t0.b,\b\u0007\u0012\b\b\b\u0012\u0004\b\b(2\u0012\b\b\n\u0012\u0004\b\b(\u000b\u0012\t\b\f\u0012\u0005\b\u0003\u0010\u0088'\u0012\t\b\r\u0012\u0005\b\u0003\u0010\u009c(Ê\u0001\u0018\b4\u0012\b\b5\u0012\u0004\b\b(6\u0012\n\b7\u0012\u0006\b\n0889Ê\u0001\f\b:\u0012\b\b;\u0012\u0004\b\u0003\u0010\u0000¨\u00063"}, d2 = {"Lcom/samples/interop/dagger/demo/di/TrackingModule$BindsMirror;", "", "<init>", "()V", "bindsOptionalOf_opt", "Lcom/samples/interop/dagger/demo/tracking/TrackingExporter;", "Ldagger/BindsOptionalOf;", "Ldev/zacsweers/metro/internal/CallableMetadata;", "callableName", "bindsOptionalOf", "propertyName", "", "startOffset", "endOffset", "bindsTrackingAdapter24167010169_intoset", "Lcom/samples/interop/dagger/demo/tracking/TrackingAdapter;", "instance", "Lcom/samples/interop/dagger/demo/tracking/TrackingAdapter2;", "Ldev/zacsweers/metro/Binds;", "Ldev/zacsweers/metro/IntoSet;", "Lcom/samples/interop/dagger/demo/tracking/OldTrackingQualifier;", "bindsTrackingAdapter2", "bindsTrackingAdapter33657365170_intoset", "Lcom/samples/interop/dagger/demo/tracking/TrackingAdapter3;", "Lcom/samples/interop/dagger/demo/tracking/NewTrackingQualifier;", "bindsTrackingAdapter3", "bindsTrackingAdapter43657365170_intoset", "Lcom/samples/interop/dagger/demo/tracking/TrackingAdapter4;", "bindsTrackingAdapter4", "bindsTrackingAdapter53657365170_intoset", "Lcom/samples/interop/dagger/demo/tracking/TrackingAdapter5;", "bindsTrackingAdapter5", "bindsTrackingAdapter63657365170_intoset", "Lcom/samples/interop/dagger/demo/tracking/TrackingAdapter6;", "bindsTrackingAdapter6", "bindsTrackingAdapter73657365170_intoset", "Lcom/samples/interop/dagger/demo/tracking/TrackingAdapter7;", "bindsTrackingAdapter7", "bindsTrackingAdapter83657365170_intoset", "Lcom/samples/interop/dagger/demo/tracking/TrackingAdapter8;", "bindsTrackingAdapter8", "bindsTrackingAdapter93657365170_intoset", "Lcom/samples/interop/dagger/demo/tracking/TrackingAdapter9;", "bindsTrackingAdapter9", "providesStringTag1167052951_intomap", "Lcom/samples/interop/dagger/demo/tracking/TrackingIdentifier;", "Lcom/samples/interop/dagger/demo/tracking/OldTrackingIdentifier;", "Ldev/zacsweers/metro/IntoMap;", "Ldagger/multibindings/ClassKey;", "value", "providesStringTag", "interopDaggerDemo", "Lkotlin/Deprecated;", "message", "This synthesized declaration should not be used directly", "level", "Lkotlin/DeprecationLevel;", "HIDDEN", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
-    public static abstract class BindsMirror {
-        public static final int $stable = 8;
-
-        private BindsMirror() {
-        }
-
-        @OldTrackingQualifier
-        @Binds
-        @IntoSet
-        @CallableMetadata(callableName = "bindsTrackingAdapter2", endOffset = 1527, propertyName = "", startOffset = 1456)
-        public final TrackingAdapter bindsTrackingAdapter24167010169_intoset(TrackingAdapter2 instance) {
-            Intrinsics.checkNotNullParameter(instance, "instance");
-            throw new IllegalStateException("Never called".toString());
-        }
-
-        @NewTrackingQualifier
-        @Binds
-        @IntoSet
-        @CallableMetadata(callableName = "bindsTrackingAdapter3", endOffset = 1646, propertyName = "", startOffset = 1575)
-        public final TrackingAdapter bindsTrackingAdapter33657365170_intoset(TrackingAdapter3 instance) {
-            Intrinsics.checkNotNullParameter(instance, "instance");
-            throw new IllegalStateException("Never called".toString());
-        }
-
-        @NewTrackingQualifier
-        @Binds
-        @IntoSet
-        @CallableMetadata(callableName = "bindsTrackingAdapter4", endOffset = 1765, propertyName = "", startOffset = 1694)
-        public final TrackingAdapter bindsTrackingAdapter43657365170_intoset(TrackingAdapter4 instance) {
-            Intrinsics.checkNotNullParameter(instance, "instance");
-            throw new IllegalStateException("Never called".toString());
-        }
-
-        @NewTrackingQualifier
-        @Binds
-        @IntoSet
-        @CallableMetadata(callableName = "bindsTrackingAdapter5", endOffset = 1884, propertyName = "", startOffset = 1813)
-        public final TrackingAdapter bindsTrackingAdapter53657365170_intoset(TrackingAdapter5 instance) {
-            Intrinsics.checkNotNullParameter(instance, "instance");
-            throw new IllegalStateException("Never called".toString());
-        }
-
-        @NewTrackingQualifier
-        @Binds
-        @IntoSet
-        @CallableMetadata(callableName = "bindsTrackingAdapter6", endOffset = 2003, propertyName = "", startOffset = 1932)
-        public final TrackingAdapter bindsTrackingAdapter63657365170_intoset(TrackingAdapter6 instance) {
-            Intrinsics.checkNotNullParameter(instance, "instance");
-            throw new IllegalStateException("Never called".toString());
-        }
-
-        @NewTrackingQualifier
-        @Binds
-        @IntoSet
-        @CallableMetadata(callableName = "bindsTrackingAdapter7", endOffset = 2122, propertyName = "", startOffset = 2051)
-        public final TrackingAdapter bindsTrackingAdapter73657365170_intoset(TrackingAdapter7 instance) {
-            Intrinsics.checkNotNullParameter(instance, "instance");
-            throw new IllegalStateException("Never called".toString());
-        }
-
-        @NewTrackingQualifier
-        @Binds
-        @IntoSet
-        @CallableMetadata(callableName = "bindsTrackingAdapter8", endOffset = 2241, propertyName = "", startOffset = 2170)
-        public final TrackingAdapter bindsTrackingAdapter83657365170_intoset(TrackingAdapter8 instance) {
-            Intrinsics.checkNotNullParameter(instance, "instance");
-            throw new IllegalStateException("Never called".toString());
-        }
-
-        @NewTrackingQualifier
-        @Binds
-        @IntoSet
-        @CallableMetadata(callableName = "bindsTrackingAdapter9", endOffset = 2360, propertyName = "", startOffset = 2289)
-        public final TrackingAdapter bindsTrackingAdapter93657365170_intoset(TrackingAdapter9 instance) {
-            Intrinsics.checkNotNullParameter(instance, "instance");
-            throw new IllegalStateException("Never called".toString());
-        }
-
-        @BindsOptionalOf
-        @CallableMetadata(callableName = "bindsOptionalOf", endOffset = 2426, propertyName = "", startOffset = 2387)
-        public final TrackingExporter bindsOptionalOf_opt() {
-            throw new IllegalStateException("Never called".toString());
-        }
-
-        @Binds
-        @ClassKey(OldTrackingIdentifier.class)
-        @IntoMap
-        @CallableMetadata(callableName = "providesStringTag", endOffset = 2574, propertyName = "", startOffset = 2500)
-        public final TrackingIdentifier providesStringTag1167052951_intomap(OldTrackingIdentifier instance) {
-            Intrinsics.checkNotNullParameter(instance, "instance");
-            throw new IllegalStateException("Never called".toString());
-        }
-    }
-
-    /* JADX INFO: compiled from: TrackingModule.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     public static final class DefaultImpls {
         @OldTrackingQualifier
-        @dagger.Binds
-        @dagger.multibindings.IntoSet
+        @Binds
+        @IntoSet
         @Deprecated
         public static TrackingAdapter bindsTrackingAdapter2(TrackingModule $this, TrackingAdapter2 instance) {
             Intrinsics.checkNotNullParameter(instance, "instance");
@@ -157,8 +60,8 @@ public interface TrackingModule {
         }
 
         @NewTrackingQualifier
-        @dagger.Binds
-        @dagger.multibindings.IntoSet
+        @Binds
+        @IntoSet
         @Deprecated
         public static TrackingAdapter bindsTrackingAdapter3(TrackingModule $this, TrackingAdapter3 instance) {
             Intrinsics.checkNotNullParameter(instance, "instance");
@@ -166,8 +69,8 @@ public interface TrackingModule {
         }
 
         @NewTrackingQualifier
-        @dagger.Binds
-        @dagger.multibindings.IntoSet
+        @Binds
+        @IntoSet
         @Deprecated
         public static TrackingAdapter bindsTrackingAdapter4(TrackingModule $this, TrackingAdapter4 instance) {
             Intrinsics.checkNotNullParameter(instance, "instance");
@@ -175,8 +78,8 @@ public interface TrackingModule {
         }
 
         @NewTrackingQualifier
-        @dagger.Binds
-        @dagger.multibindings.IntoSet
+        @Binds
+        @IntoSet
         @Deprecated
         public static TrackingAdapter bindsTrackingAdapter5(TrackingModule $this, TrackingAdapter5 instance) {
             Intrinsics.checkNotNullParameter(instance, "instance");
@@ -184,8 +87,8 @@ public interface TrackingModule {
         }
 
         @NewTrackingQualifier
-        @dagger.Binds
-        @dagger.multibindings.IntoSet
+        @Binds
+        @IntoSet
         @Deprecated
         public static TrackingAdapter bindsTrackingAdapter6(TrackingModule $this, TrackingAdapter6 instance) {
             Intrinsics.checkNotNullParameter(instance, "instance");
@@ -193,8 +96,8 @@ public interface TrackingModule {
         }
 
         @NewTrackingQualifier
-        @dagger.Binds
-        @dagger.multibindings.IntoSet
+        @Binds
+        @IntoSet
         @Deprecated
         public static TrackingAdapter bindsTrackingAdapter7(TrackingModule $this, TrackingAdapter7 instance) {
             Intrinsics.checkNotNullParameter(instance, "instance");
@@ -202,8 +105,8 @@ public interface TrackingModule {
         }
 
         @NewTrackingQualifier
-        @dagger.Binds
-        @dagger.multibindings.IntoSet
+        @Binds
+        @IntoSet
         @Deprecated
         public static TrackingAdapter bindsTrackingAdapter8(TrackingModule $this, TrackingAdapter8 instance) {
             Intrinsics.checkNotNullParameter(instance, "instance");
@@ -211,8 +114,8 @@ public interface TrackingModule {
         }
 
         @NewTrackingQualifier
-        @dagger.Binds
-        @dagger.multibindings.IntoSet
+        @Binds
+        @IntoSet
         @Deprecated
         public static TrackingAdapter bindsTrackingAdapter9(TrackingModule $this, TrackingAdapter9 instance) {
             Intrinsics.checkNotNullParameter(instance, "instance");
@@ -225,10 +128,10 @@ public interface TrackingModule {
             return TrackingModule.super.bindsOptionalOf();
         }
 
-        @dagger.Binds
+        @Binds
         @Deprecated
         @ClassKey(OldTrackingIdentifier.class)
-        @dagger.multibindings.IntoMap
+        @IntoMap
         public static TrackingIdentifier providesStringTag(TrackingModule $this, OldTrackingIdentifier instance) {
             Intrinsics.checkNotNullParameter(instance, "instance");
             return TrackingModule.super.providesStringTag(instance);
@@ -236,64 +139,64 @@ public interface TrackingModule {
     }
 
     @OldTrackingQualifier
-    @dagger.Binds
-    @dagger.multibindings.IntoSet
+    @Binds
+    @IntoSet
     default TrackingAdapter bindsTrackingAdapter2(TrackingAdapter2 instance) {
         Intrinsics.checkNotNullParameter(instance, "instance");
         throw new IllegalStateException("Never called".toString());
     }
 
     @NewTrackingQualifier
-    @dagger.Binds
-    @dagger.multibindings.IntoSet
+    @Binds
+    @IntoSet
     default TrackingAdapter bindsTrackingAdapter3(TrackingAdapter3 instance) {
         Intrinsics.checkNotNullParameter(instance, "instance");
         throw new IllegalStateException("Never called".toString());
     }
 
     @NewTrackingQualifier
-    @dagger.Binds
-    @dagger.multibindings.IntoSet
+    @Binds
+    @IntoSet
     default TrackingAdapter bindsTrackingAdapter4(TrackingAdapter4 instance) {
         Intrinsics.checkNotNullParameter(instance, "instance");
         throw new IllegalStateException("Never called".toString());
     }
 
     @NewTrackingQualifier
-    @dagger.Binds
-    @dagger.multibindings.IntoSet
+    @Binds
+    @IntoSet
     default TrackingAdapter bindsTrackingAdapter5(TrackingAdapter5 instance) {
         Intrinsics.checkNotNullParameter(instance, "instance");
         throw new IllegalStateException("Never called".toString());
     }
 
     @NewTrackingQualifier
-    @dagger.Binds
-    @dagger.multibindings.IntoSet
+    @Binds
+    @IntoSet
     default TrackingAdapter bindsTrackingAdapter6(TrackingAdapter6 instance) {
         Intrinsics.checkNotNullParameter(instance, "instance");
         throw new IllegalStateException("Never called".toString());
     }
 
     @NewTrackingQualifier
-    @dagger.Binds
-    @dagger.multibindings.IntoSet
+    @Binds
+    @IntoSet
     default TrackingAdapter bindsTrackingAdapter7(TrackingAdapter7 instance) {
         Intrinsics.checkNotNullParameter(instance, "instance");
         throw new IllegalStateException("Never called".toString());
     }
 
     @NewTrackingQualifier
-    @dagger.Binds
-    @dagger.multibindings.IntoSet
+    @Binds
+    @IntoSet
     default TrackingAdapter bindsTrackingAdapter8(TrackingAdapter8 instance) {
         Intrinsics.checkNotNullParameter(instance, "instance");
         throw new IllegalStateException("Never called".toString());
     }
 
     @NewTrackingQualifier
-    @dagger.Binds
-    @dagger.multibindings.IntoSet
+    @Binds
+    @IntoSet
     default TrackingAdapter bindsTrackingAdapter9(TrackingAdapter9 instance) {
         Intrinsics.checkNotNullParameter(instance, "instance");
         throw new IllegalStateException("Never called".toString());
@@ -394,8 +297,8 @@ public interface TrackingModule {
     }
 
     @ClassKey(OldTrackingIdentifier.class)
-    @dagger.Binds
-    @dagger.multibindings.IntoMap
+    @Binds
+    @IntoMap
     default TrackingIdentifier providesStringTag(OldTrackingIdentifier instance) {
         Intrinsics.checkNotNullParameter(instance, "instance");
         throw new IllegalStateException("Never called".toString());

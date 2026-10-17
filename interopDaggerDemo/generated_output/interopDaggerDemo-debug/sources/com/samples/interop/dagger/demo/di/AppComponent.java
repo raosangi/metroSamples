@@ -29,7 +29,7 @@ import com.samples.interop.dagger.demo.viewmodel.MainViewModelTrackingModule;
 import dagger.BindsInstance;
 import dagger.Component;
 import dev.zacsweers.metro.DependencyGraph;
-import dev.zacsweers.metro.LambdaProvider;
+import dev.zacsweers.metro.ProviderKt;
 import dev.zacsweers.metro.internal.GraphFactoryInvokeFunctionMarker;
 import dev.zacsweers.metro.internal.MetroImplMarker;
 import dev.zacsweers.metro.internal.SetFactory;
@@ -100,14 +100,147 @@ public interface AppComponent {
     }
 
     /* JADX INFO: compiled from: AppComponent.kt */
-    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0007\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003Ê\u0001\u0018\b\u0005\u0012\b\b\u0006\u0012\u0004\b\b(\u0007\u0012\n\b\b\u0012\u0006\b\n0\t8\nÊ\u0001\u0002\b\u000bÊ\u0001\f\b\f\u0012\b\b\r\u0012\u0004\b\u0003\u0010\u0000\u008a\u0002\u009e\u0001\b\u000e\u0012\u0099\u0001\b\u0001\u0012\u0094\u0001\b\u0001\u001a%<get-mainActivitySubComponentFactory>\u001a\u001e<get-screenContextProviderMap>\u001a\u0018<get-trackingAdapterNew>\u001a\u0018<get-trackingAdapterOld>\u001a\u0012<get-trackingTags>\"\u0001\u001e¨\u0006\u0004"}, d2 = {"Lcom/samples/interop/dagger/demo/di/AppComponent$Impl;", "Lcom/samples/interop/dagger/demo/di/AppComponent;", "<init>", "()V", "interopDaggerDemo", "Lkotlin/Deprecated;", "message", "This synthesized declaration should not be used directly", "level", "Lkotlin/DeprecationLevel;", "HIDDEN", "Ldev/zacsweers/metro/internal/MetroImplMarker;", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters", "dev.zacsweers.metro.compiler"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0007\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003Ê\u0001\u0018\b\u0005\u0012\b\b\u0006\u0012\u0004\b\b(\u0007\u0012\n\b\b\u0012\u0006\b\n0\t8\nÊ\u0001\u0002\b\u000bÊ\u0001\f\b\f\u0012\b\b\r\u0012\u0004\b\u0003\u0010\u0002\u008a\u0002\u009e\u0001\b\u000e\u0012\u0099\u0001\b\u0001\u0012\u0094\u0001\b\u0001\u001a%<get-mainActivitySubComponentFactory>\u001a\u001e<get-screenContextProviderMap>\u001a\u0018<get-trackingAdapterNew>\u001a\u0018<get-trackingAdapterOld>\u001a\u0012<get-trackingTags>\"\u0001\u001e¨\u0006\u0004"}, d2 = {"Lcom/samples/interop/dagger/demo/di/AppComponent$Impl;", "Lcom/samples/interop/dagger/demo/di/AppComponent;", "<init>", "()V", "interopDaggerDemo", "Lkotlin/Deprecated;", "message", "This synthesized declaration should not be used directly", "level", "Lkotlin/DeprecationLevel;", "HIDDEN", "Ldev/zacsweers/metro/internal/MetroImplMarker;", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters", "dev.zacsweers.metro.compiler"}, k = 1, mv = {2, 4, 0}, xi = 48)
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "This synthesized declaration should not be used directly")
     @MetroImplMarker
     public static final class Impl implements AppComponent {
-        public static final int $stable = 8;
-        private Shard1 shard1;
-        private Shard2 shard2;
-        private final Impl thisGraphInstance;
+        public static final int $stable = 0;
+        Shard1 shard1;
+        Shard2 shard2;
+
+        /* JADX INFO: compiled from: AppComponent.kt */
+        @DependencyGraph
+        @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
+        private static final class MainActivitySubComponentImpl implements MainActivitySubComponent {
+            Impl appComponentImpl;
+
+            /* JADX INFO: compiled from: AppComponent.kt */
+            @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
+            private static final class FactoryImpl implements MainActivitySubComponent.Factory {
+                final Impl AppComponentImpl;
+
+                public FactoryImpl(Impl AppComponentImpl) {
+                    Intrinsics.checkNotNullParameter(AppComponentImpl, "AppComponentImpl");
+                    this.AppComponentImpl = AppComponentImpl;
+                }
+
+                @Override // com.samples.interop.dagger.demo.di.MainActivitySubComponent.Factory
+                public final MainActivitySubComponent create() {
+                    return new MainActivitySubComponentImpl(this.AppComponentImpl);
+                }
+            }
+
+            /* JADX INFO: compiled from: AppComponent.kt */
+            @DependencyGraph(bindingContainers = {MainViewModelTrackingModule.class})
+            @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
+            private static final class MainViewModelSubcomponentImpl implements MainViewModelSubcomponent {
+                MainActivitySubComponentImpl mainActivitySubComponentImpl;
+                final SavedStateHandle savedStateHandleInstance;
+
+                /* JADX INFO: compiled from: AppComponent.kt */
+                @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
+                private static final class FactoryImpl implements MainViewModelSubcomponent.Factory {
+                    final MainActivitySubComponentImpl MainActivitySubComponentImpl;
+
+                    public FactoryImpl(MainActivitySubComponentImpl MainActivitySubComponentImpl) {
+                        Intrinsics.checkNotNullParameter(MainActivitySubComponentImpl, "MainActivitySubComponentImpl");
+                        this.MainActivitySubComponentImpl = MainActivitySubComponentImpl;
+                    }
+
+                    @Override // com.samples.interop.dagger.demo.viewmodel.MainViewModelSubcomponent.Factory
+                    public final MainViewModelSubcomponent create(@BindsInstance SavedStateHandle savedStateHandle) {
+                        Intrinsics.checkNotNullParameter(savedStateHandle, "savedStateHandle");
+                        return new MainViewModelSubcomponentImpl(this.MainActivitySubComponentImpl, savedStateHandle);
+                    }
+                }
+
+                public MainViewModelSubcomponentImpl(MainActivitySubComponentImpl mainActivitySubComponentImpl, @BindsInstance SavedStateHandle savedStateHandle) {
+                    Intrinsics.checkNotNullParameter(mainActivitySubComponentImpl, "mainActivitySubComponentImpl");
+                    Intrinsics.checkNotNullParameter(savedStateHandle, "savedStateHandle");
+                    this.mainActivitySubComponentImpl = mainActivitySubComponentImpl;
+                    this.savedStateHandleInstance = savedStateHandle;
+                }
+
+                @Override // com.samples.interop.dagger.demo.viewmodel.MainViewModelSubcomponent
+                public final MainViewModel getMainViewModel() {
+                    return new MainViewModel(this.mainActivitySubComponentImpl.getProvidesTrackingHandler(), new DefaultDataSource(new ScreenContextProvider(new AppNameInfo(), new AppVersionInfo()), this.mainActivitySubComponentImpl.getProvidesTrackingHandler()), this.savedStateHandleInstance);
+                }
+            }
+
+            public MainActivitySubComponentImpl(Impl appComponentImpl) {
+                Intrinsics.checkNotNullParameter(appComponentImpl, "appComponentImpl");
+                this.appComponentImpl = appComponentImpl;
+            }
+
+            private final MainViewModelSubcomponent.Factory getFactoryFactory() {
+                return new MainViewModelSubcomponentImpl.FactoryImpl(this);
+            }
+
+            /* JADX INFO: Access modifiers changed from: private */
+            public final TrackingHandler getProvidesTrackingHandler() {
+                return TrackingModule.INSTANCE.providesTrackingHandler(JavaxInteropKt.asJavaxProvider(this.appComponentImpl.shard1.getSetOfTrackingAdapterProvider2$interopDaggerDemo()), JavaxInteropKt.asJavaxProvider(this.appComponentImpl.shard1.getSetOfTrackingAdapterProvider$interopDaggerDemo()), this.appComponentImpl.shard2.getMapOfKClass___ToTrackingIdentifier$interopDaggerDemo());
+            }
+
+            @Override // com.samples.interop.dagger.demo.di.MainActivitySubComponent
+            public final MainViewModelSubcomponent.Factory getMainActivitySubComponentFactory() {
+                return getFactoryFactory();
+            }
+
+            @Override // com.samples.interop.dagger.demo.di.MainActivitySubComponent
+            public final void inject(MainActivity activity) {
+                Intrinsics.checkNotNullParameter(activity, "activity");
+                MainActivity.MetroMembersInjector.injectErrorHandler(activity, new DefaultErrorHandler());
+                MainActivity.MetroMembersInjector.injectTrackingHandler(activity, getProvidesTrackingHandler());
+                MainActivity.MetroMembersInjector.injectDataSource(activity, new DefaultDataSource(new ScreenContextProvider(new AppNameInfo(), new AppVersionInfo()), getProvidesTrackingHandler()));
+                MainActivity.MetroMembersInjector.injectMainViewModelSubcomponentFactory(activity, getFactoryFactory());
+            }
+        }
+
+        /* JADX INFO: compiled from: AppComponent.kt */
+        @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
+        private static final class Shard1 {
+            public Shard1(Impl graph) {
+                Intrinsics.checkNotNullParameter(graph, "graph");
+            }
+
+            @NewTrackingQualifier
+            public static /* synthetic */ void getSetOfTrackingAdapterProvider$interopDaggerDemo$annotations() {
+            }
+
+            @OldTrackingQualifier
+            public static /* synthetic */ void getSetOfTrackingAdapterProvider2$interopDaggerDemo$annotations() {
+            }
+
+            public final dev.zacsweers.metro.Provider<Set<TrackingAdapter>> getSetOfTrackingAdapterProvider$interopDaggerDemo() {
+                SetFactory.Builder builder = SetFactory.builder(7, 0);
+                builder.addProvider(TrackingAdapter3.MetroFactory.create());
+                builder.addProvider(TrackingAdapter4.MetroFactory.create());
+                builder.addProvider(TrackingAdapter5.MetroFactory.create());
+                builder.addProvider(TrackingAdapter6.MetroFactory.create());
+                builder.addProvider(TrackingAdapter7.MetroFactory.create());
+                builder.addProvider(TrackingAdapter8.MetroFactory.create());
+                builder.addProvider(TrackingAdapter9.MetroFactory.create(ProviderKt.providerOf(Optional.empty())));
+                return builder.build();
+            }
+
+            public final dev.zacsweers.metro.Provider<Set<TrackingAdapter>> getSetOfTrackingAdapterProvider2$interopDaggerDemo() {
+                return SetFactory.singleton(TrackingAdapter2.MetroFactory.create());
+            }
+        }
+
+        /* JADX INFO: compiled from: AppComponent.kt */
+        @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
+        private static final class Shard2 {
+            public Shard2(Impl graph) {
+                Intrinsics.checkNotNullParameter(graph, "graph");
+            }
+
+            public final Map<KClass<?>, Function0<TrackingIdentifier>> getMapOfKClass___ToTrackingIdentifier$interopDaggerDemo() {
+                Map mapCreateMapBuilder = MapsKt.createMapBuilder(1);
+                mapCreateMapBuilder.put(Reflection.getOrCreateKotlinClass(OldTrackingIdentifier.class), OldTrackingIdentifier.MetroFactory.create());
+                return MapsKt.build(mapCreateMapBuilder);
+            }
+        }
 
         public /* synthetic */ Impl(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -122,19 +255,20 @@ public interface AppComponent {
         }
 
         private Impl() {
-            this.thisGraphInstance = this;
             this.shard1 = new Shard1(this);
             this.shard2 = new Shard2(this);
         }
 
         @Override // com.samples.interop.dagger.demo.di.AppComponent
         public final MainActivitySubComponent.Factory getMainActivitySubComponentFactory() {
-            return new MainActivitySubComponentImpl.FactoryImpl(this.thisGraphInstance);
+            return new MainActivitySubComponentImpl.FactoryImpl(this);
         }
 
         @Override // com.samples.interop.dagger.demo.di.AppComponent
         public final Map<String, Provider<ScreenDetailHandler>> getScreenContextProviderMap() {
-            return this.shard2.getMapOfStringToScreenDetailHandler$interopDaggerDemo();
+            Map mapCreateMapBuilder = MapsKt.createMapBuilder(1);
+            mapCreateMapBuilder.put("App", JavaxInteropKt.asJavaxProvider(AppScreenDetailHandler.MetroFactory.create()));
+            return MapsKt.build(mapCreateMapBuilder);
         }
 
         @Override // com.samples.interop.dagger.demo.di.AppComponent
@@ -155,319 +289,6 @@ public interface AppComponent {
                 linkedHashMap.put(JvmClassMappingKt.getJavaClass((KClass) ((Map.Entry) obj).getKey()), ((Map.Entry) obj).getValue());
             }
             return linkedHashMap;
-        }
-
-        /* JADX INFO: compiled from: AppComponent.kt */
-        @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-        private static final class Shard2 {
-            private Impl graph;
-
-            public Shard2(Impl graph) {
-                Intrinsics.checkNotNullParameter(graph, "graph");
-            }
-
-            public final Map<KClass<?>, Function0<TrackingIdentifier>> getMapOfKClass___ToTrackingIdentifier$interopDaggerDemo() {
-                Map mapCreateMapBuilder = MapsKt.createMapBuilder(1);
-                mapCreateMapBuilder.put(Reflection.getOrCreateKotlinClass(OldTrackingIdentifier.class), OldTrackingIdentifier.MetroFactory.create());
-                return MapsKt.build(mapCreateMapBuilder);
-            }
-
-            public final Map<String, Provider<ScreenDetailHandler>> getMapOfStringToScreenDetailHandler$interopDaggerDemo() {
-                Map mapCreateMapBuilder = MapsKt.createMapBuilder(1);
-                mapCreateMapBuilder.put("App", JavaxInteropKt.asJavaxProvider(AppScreenDetailHandler.MetroFactory.create()));
-                return MapsKt.build(mapCreateMapBuilder);
-            }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        /* JADX INFO: compiled from: AppComponent.kt */
-        @DependencyGraph
-        @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-        static final class MainActivitySubComponentImpl implements MainActivitySubComponent {
-            private Impl appComponentImpl;
-            private Shard1 shard1;
-            private Shard2 shard2;
-            private Shard3 shard3;
-            private final MainActivitySubComponentImpl thisGraphInstance;
-
-            /* JADX INFO: compiled from: AppComponent.kt */
-            @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-            private static final class FactoryImpl implements MainActivitySubComponent.Factory {
-                private final Impl AppComponentImpl;
-
-                public FactoryImpl(Impl AppComponentImpl) {
-                    Intrinsics.checkNotNullParameter(AppComponentImpl, "AppComponentImpl");
-                    this.AppComponentImpl = AppComponentImpl;
-                }
-
-                @Override // com.samples.interop.dagger.demo.di.MainActivitySubComponent.Factory
-                public final MainActivitySubComponent create() {
-                    return new MainActivitySubComponentImpl(this.AppComponentImpl);
-                }
-            }
-
-            /* JADX INFO: compiled from: AppComponent.kt */
-            @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-            private static final class Shard2 {
-                private MainActivitySubComponentImpl graph;
-
-                public Shard2(MainActivitySubComponentImpl graph) {
-                    Intrinsics.checkNotNullParameter(graph, "graph");
-                }
-
-                @OldTrackingQualifier
-                public static /* synthetic */ void getSetOfTrackingAdapterProvider$interopDaggerDemo$annotations() {
-                }
-
-                public final dev.zacsweers.metro.Provider<Set<TrackingAdapter>> getSetOfTrackingAdapterProvider$interopDaggerDemo() {
-                    return SetFactory.INSTANCE.singleton(TrackingAdapter2.MetroFactory.create());
-                }
-            }
-
-            /* JADX INFO: compiled from: AppComponent.kt */
-            @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-            private static final class Shard3 {
-                private MainActivitySubComponentImpl graph;
-
-                public Shard3(MainActivitySubComponentImpl graph) {
-                    Intrinsics.checkNotNullParameter(graph, "graph");
-                }
-
-                public final Map<KClass<?>, Function0<TrackingIdentifier>> getMapOfKClass___ToTrackingIdentifier$interopDaggerDemo() {
-                    Map mapCreateMapBuilder = MapsKt.createMapBuilder(1);
-                    mapCreateMapBuilder.put(Reflection.getOrCreateKotlinClass(OldTrackingIdentifier.class), OldTrackingIdentifier.MetroFactory.create());
-                    return MapsKt.build(mapCreateMapBuilder);
-                }
-
-                public final TrackingHandler getProvidesTrackingHandler$interopDaggerDemo() {
-                    return TrackingModule.INSTANCE.providesTrackingHandler(JavaxInteropKt.asJavaxProvider(this.graph.shard2.getSetOfTrackingAdapterProvider$interopDaggerDemo()), JavaxInteropKt.asJavaxProvider(this.graph.shard1.getSetOfTrackingAdapterProvider$interopDaggerDemo()), getMapOfKClass___ToTrackingIdentifier$interopDaggerDemo());
-                }
-            }
-
-            public MainActivitySubComponentImpl(Impl appComponentImpl) {
-                Intrinsics.checkNotNullParameter(appComponentImpl, "appComponentImpl");
-                this.appComponentImpl = appComponentImpl;
-                this.thisGraphInstance = this;
-                this.shard1 = new Shard1(this);
-                this.shard2 = new Shard2(this);
-                this.shard3 = new Shard3(this);
-            }
-
-            @Override // com.samples.interop.dagger.demo.di.MainActivitySubComponent
-            public final MainViewModelSubcomponent.Factory getMainActivitySubComponentFactory() {
-                return this.shard1.getFactoryFactory$interopDaggerDemo();
-            }
-
-            @Override // com.samples.interop.dagger.demo.di.MainActivitySubComponent
-            public final void inject(MainActivity activity) {
-                Intrinsics.checkNotNullParameter(activity, "activity");
-                MainActivity.MetroMembersInjector.Companion.injectErrorHandler(activity, new DefaultErrorHandler());
-                MainActivity.MetroMembersInjector.Companion.injectTrackingHandler(activity, this.shard3.getProvidesTrackingHandler$interopDaggerDemo());
-                MainActivity.MetroMembersInjector.Companion.injectDataSource(activity, new DefaultDataSource(new ScreenContextProvider(new AppNameInfo(), new AppVersionInfo()), this.shard3.getProvidesTrackingHandler$interopDaggerDemo()));
-                MainActivity.MetroMembersInjector.Companion.injectMainViewModelSubcomponentFactory(activity, this.shard1.getFactoryFactory$interopDaggerDemo());
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            /* JADX INFO: compiled from: AppComponent.kt */
-            @DependencyGraph(bindingContainers = {MainViewModelTrackingModule.class})
-            @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-            static final class MainViewModelSubcomponentImpl implements MainViewModelSubcomponent {
-                private MainActivitySubComponentImpl mainActivitySubComponentImpl;
-                private final SavedStateHandle savedStateHandleInstance;
-                private Shard1 shard1;
-                private Shard2 shard2;
-
-                /* JADX INFO: compiled from: AppComponent.kt */
-                @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-                private static final class FactoryImpl implements MainViewModelSubcomponent.Factory {
-                    private final MainActivitySubComponentImpl MainActivitySubComponentImpl;
-
-                    public FactoryImpl(MainActivitySubComponentImpl MainActivitySubComponentImpl) {
-                        Intrinsics.checkNotNullParameter(MainActivitySubComponentImpl, "MainActivitySubComponentImpl");
-                        this.MainActivitySubComponentImpl = MainActivitySubComponentImpl;
-                    }
-
-                    @Override // com.samples.interop.dagger.demo.viewmodel.MainViewModelSubcomponent.Factory
-                    public final MainViewModelSubcomponent create(@BindsInstance SavedStateHandle savedStateHandle) {
-                        Intrinsics.checkNotNullParameter(savedStateHandle, "savedStateHandle");
-                        return new MainViewModelSubcomponentImpl(this.MainActivitySubComponentImpl, savedStateHandle);
-                    }
-                }
-
-                /* JADX INFO: compiled from: AppComponent.kt */
-                @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-                private static final class Shard2 {
-                    private MainViewModelSubcomponentImpl graph;
-
-                    public Shard2(MainViewModelSubcomponentImpl graph) {
-                        Intrinsics.checkNotNullParameter(graph, "graph");
-                    }
-
-                    public final Map<KClass<?>, Function0<TrackingIdentifier>> getMapOfKClass___ToTrackingIdentifier$interopDaggerDemo() {
-                        Map mapCreateMapBuilder = MapsKt.createMapBuilder(1);
-                        mapCreateMapBuilder.put(Reflection.getOrCreateKotlinClass(OldTrackingIdentifier.class), OldTrackingIdentifier.MetroFactory.create());
-                        return MapsKt.build(mapCreateMapBuilder);
-                    }
-
-                    public final TrackingHandler getProvidesTrackingHandler$interopDaggerDemo() {
-                        return TrackingModule.INSTANCE.providesTrackingHandler(JavaxInteropKt.asJavaxProvider(this.graph.shard1.getSetOfTrackingAdapterProvider2$interopDaggerDemo()), JavaxInteropKt.asJavaxProvider(this.graph.shard1.getSetOfTrackingAdapterProvider$interopDaggerDemo()), getMapOfKClass___ToTrackingIdentifier$interopDaggerDemo());
-                    }
-                }
-
-                public MainViewModelSubcomponentImpl(MainActivitySubComponentImpl mainActivitySubComponentImpl, @BindsInstance SavedStateHandle savedStateHandle) {
-                    Intrinsics.checkNotNullParameter(mainActivitySubComponentImpl, "mainActivitySubComponentImpl");
-                    Intrinsics.checkNotNullParameter(savedStateHandle, "savedStateHandle");
-                    this.mainActivitySubComponentImpl = mainActivitySubComponentImpl;
-                    this.savedStateHandleInstance = savedStateHandle;
-                    this.shard1 = new Shard1(this);
-                    this.shard2 = new Shard2(this);
-                }
-
-                @Override // com.samples.interop.dagger.demo.viewmodel.MainViewModelSubcomponent
-                public final MainViewModel getMainViewModel() {
-                    return new MainViewModel(this.shard2.getProvidesTrackingHandler$interopDaggerDemo(), new DefaultDataSource(new ScreenContextProvider(new AppNameInfo(), new AppVersionInfo()), this.shard2.getProvidesTrackingHandler$interopDaggerDemo()), this.savedStateHandleInstance);
-                }
-
-                /* JADX INFO: Access modifiers changed from: private */
-                /* JADX INFO: compiled from: AppComponent.kt */
-                @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-                static final class Shard1 {
-                    private MainViewModelSubcomponentImpl graph;
-
-                    public Shard1(MainViewModelSubcomponentImpl graph) {
-                        Intrinsics.checkNotNullParameter(graph, "graph");
-                    }
-
-                    @NewTrackingQualifier
-                    public static /* synthetic */ void getSetOfTrackingAdapterProvider$interopDaggerDemo$annotations() {
-                    }
-
-                    @OldTrackingQualifier
-                    public static /* synthetic */ void getSetOfTrackingAdapterProvider2$interopDaggerDemo$annotations() {
-                    }
-
-                    public final dev.zacsweers.metro.Provider<Set<TrackingAdapter>> getSetOfTrackingAdapterProvider2$interopDaggerDemo() {
-                        return SetFactory.INSTANCE.singleton(TrackingAdapter2.MetroFactory.create());
-                    }
-
-                    public final dev.zacsweers.metro.Provider<Set<TrackingAdapter>> getSetOfTrackingAdapterProvider$interopDaggerDemo() {
-                        LambdaProvider lambdaProviderM7596boximpl;
-                        SetFactory.Builder builder = SetFactory.INSTANCE.builder(7, 0);
-                        builder.addProvider(TrackingAdapter8.MetroFactory.create());
-                        builder.addProvider(TrackingAdapter5.MetroFactory.create());
-                        builder.addProvider(TrackingAdapter3.MetroFactory.create());
-                        builder.addProvider(TrackingAdapter7.MetroFactory.create());
-                        TrackingAdapter9.MetroFactory.Companion companion = TrackingAdapter9.MetroFactory.Companion;
-                        Function0 function0 = new Function0() { // from class: com.samples.interop.dagger.demo.di.AppComponent$Impl$MainActivitySubComponentImpl$MainViewModelSubcomponentImpl$Shard1$$ExternalSyntheticLambda0
-                            @Override // kotlin.jvm.functions.Function0
-                            public final Object invoke() {
-                                return Optional.empty();
-                            }
-                        };
-                        if (function0 instanceof dev.zacsweers.metro.Provider) {
-                            lambdaProviderM7596boximpl = (dev.zacsweers.metro.Provider) function0;
-                        } else {
-                            lambdaProviderM7596boximpl = LambdaProvider.m7596boximpl(LambdaProvider.m7597constructorimpl(function0));
-                        }
-                        builder.addProvider(companion.create(lambdaProviderM7596boximpl));
-                        builder.addProvider(TrackingAdapter4.MetroFactory.create());
-                        builder.addProvider(TrackingAdapter6.MetroFactory.create());
-                        return builder.build();
-                    }
-                }
-            }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            /* JADX INFO: compiled from: AppComponent.kt */
-            @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-            static final class Shard1 {
-                private MainActivitySubComponentImpl graph;
-
-                public Shard1(MainActivitySubComponentImpl graph) {
-                    Intrinsics.checkNotNullParameter(graph, "graph");
-                }
-
-                @NewTrackingQualifier
-                public static /* synthetic */ void getSetOfTrackingAdapterProvider$interopDaggerDemo$annotations() {
-                }
-
-                public final MainViewModelSubcomponent.Factory getFactoryFactory$interopDaggerDemo() {
-                    return new MainViewModelSubcomponentImpl.FactoryImpl(this.graph.thisGraphInstance);
-                }
-
-                public final dev.zacsweers.metro.Provider<Set<TrackingAdapter>> getSetOfTrackingAdapterProvider$interopDaggerDemo() {
-                    LambdaProvider lambdaProviderM7596boximpl;
-                    SetFactory.Builder builder = SetFactory.INSTANCE.builder(7, 0);
-                    builder.addProvider(TrackingAdapter8.MetroFactory.create());
-                    builder.addProvider(TrackingAdapter5.MetroFactory.create());
-                    builder.addProvider(TrackingAdapter3.MetroFactory.create());
-                    builder.addProvider(TrackingAdapter7.MetroFactory.create());
-                    TrackingAdapter9.MetroFactory.Companion companion = TrackingAdapter9.MetroFactory.Companion;
-                    Function0 function0 = new Function0() { // from class: com.samples.interop.dagger.demo.di.AppComponent$Impl$MainActivitySubComponentImpl$Shard1$$ExternalSyntheticLambda0
-                        @Override // kotlin.jvm.functions.Function0
-                        public final Object invoke() {
-                            return Optional.empty();
-                        }
-                    };
-                    if (function0 instanceof dev.zacsweers.metro.Provider) {
-                        lambdaProviderM7596boximpl = (dev.zacsweers.metro.Provider) function0;
-                    } else {
-                        lambdaProviderM7596boximpl = LambdaProvider.m7596boximpl(LambdaProvider.m7597constructorimpl(function0));
-                    }
-                    builder.addProvider(companion.create(lambdaProviderM7596boximpl));
-                    builder.addProvider(TrackingAdapter4.MetroFactory.create());
-                    builder.addProvider(TrackingAdapter6.MetroFactory.create());
-                    return builder.build();
-                }
-            }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        /* JADX INFO: compiled from: AppComponent.kt */
-        @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-        static final class Shard1 {
-            private Impl graph;
-
-            public Shard1(Impl graph) {
-                Intrinsics.checkNotNullParameter(graph, "graph");
-            }
-
-            @NewTrackingQualifier
-            public static /* synthetic */ void getSetOfTrackingAdapterProvider$interopDaggerDemo$annotations() {
-            }
-
-            @OldTrackingQualifier
-            public static /* synthetic */ void getSetOfTrackingAdapterProvider2$interopDaggerDemo$annotations() {
-            }
-
-            public final dev.zacsweers.metro.Provider<Set<TrackingAdapter>> getSetOfTrackingAdapterProvider2$interopDaggerDemo() {
-                return SetFactory.INSTANCE.singleton(TrackingAdapter2.MetroFactory.create());
-            }
-
-            public final dev.zacsweers.metro.Provider<Set<TrackingAdapter>> getSetOfTrackingAdapterProvider$interopDaggerDemo() {
-                LambdaProvider lambdaProviderM7596boximpl;
-                SetFactory.Builder builder = SetFactory.INSTANCE.builder(7, 0);
-                builder.addProvider(TrackingAdapter8.MetroFactory.create());
-                builder.addProvider(TrackingAdapter5.MetroFactory.create());
-                builder.addProvider(TrackingAdapter3.MetroFactory.create());
-                builder.addProvider(TrackingAdapter7.MetroFactory.create());
-                TrackingAdapter9.MetroFactory.Companion companion = TrackingAdapter9.MetroFactory.Companion;
-                Function0 function0 = new Function0() { // from class: com.samples.interop.dagger.demo.di.AppComponent$Impl$Shard1$$ExternalSyntheticLambda0
-                    @Override // kotlin.jvm.functions.Function0
-                    public final Object invoke() {
-                        return Optional.empty();
-                    }
-                };
-                if (function0 instanceof dev.zacsweers.metro.Provider) {
-                    lambdaProviderM7596boximpl = (dev.zacsweers.metro.Provider) function0;
-                } else {
-                    lambdaProviderM7596boximpl = LambdaProvider.m7596boximpl(LambdaProvider.m7597constructorimpl(function0));
-                }
-                builder.addProvider(companion.create(lambdaProviderM7596boximpl));
-                builder.addProvider(TrackingAdapter4.MetroFactory.create());
-                builder.addProvider(TrackingAdapter6.MetroFactory.create());
-                return builder.build();
-            }
         }
     }
 

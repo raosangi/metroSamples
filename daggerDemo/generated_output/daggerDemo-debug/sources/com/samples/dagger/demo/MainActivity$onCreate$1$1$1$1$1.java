@@ -37,7 +37,7 @@ final class MainActivity$onCreate$1$1$1$1$1 extends SuspendLambda implements Fun
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Object invokeSuspend(Object $result) throws Throwable {
+    public final Object invokeSuspend(Object $result) {
         IntrinsicsKt.getCOROUTINE_SUSPENDED();
         switch (this.label) {
             case 0:
